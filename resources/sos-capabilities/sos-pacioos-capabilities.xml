@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sos:Capabilities version="1.0.0" xmlns:gml="http://www.opengis.net/gml"
+    xmlns:oost="http://www.oostethys.org/schemas/0.1.0/oostethys"
+    xmlns:ows="http://www.opengis.net/ows/1.1"
+    xmlns:sos="http://www.opengis.net/sos/1.0"
+    xmlns:swe="http://www.opengis.net/swe/1.0.1"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/sos/1.0 http://schemas.opengis.net/sos/1.0.0/sosGetCapabilities.xsd">
+    <ows:ServiceIdentification>
+        <ows:Title>PacIOOS Water Quality Buoy AW: Ala Wai, Oahu, Hawaii</ows:Title>
+        <ows:Abstract>University of Hawaii</ows:Abstract>
+        <ows:Keywords>
+            <ows:Keyword/>
+        </ows:Keywords>
+        <ows:ServiceType codeSpace="http://opengeospatial.net">OGC:SOS</ows:ServiceType>
+        <ows:ServiceTypeVersion>1.0.0</ows:ServiceTypeVersion>
+        <ows:Fees>NONE</ows:Fees>
+        <ows:AccessConstraints>The data may be used and redistributed for free but is not intended for legal use, since it may contain inaccuracies. Neither the data Contributor, University of Hawaii, PacIOOS, NOAA, State of Hawaii nor the United States Government, nor any of their employees or contractors, makes any warranty, express or implied, including warranties of merchantability and fitness for a particular purpose, or assumes any legal liability for the accuracy, completeness, or usefulness, of this information.</ows:AccessConstraints>
+    </ows:ServiceIdentification>
+    <ows:ServiceProvider>
+        <ows:ProviderName>buoy</ows:ProviderName>
+        <ows:ProviderSite>http://pacioos.org</ows:ProviderSite>
+        <ows:ServiceContact>
+            <ows:IndividualName/>
+            <ows:PositionName/>
+            <ows:ContactInfo>
+                <ows:Phone>
+                    <ows:Voice/>
+                </ows:Phone>
+                <ows:Address>
+                    <ows:DeliveryPoint/>
+                    <ows:City/>
+                    <ows:AdministrativeArea/>
+                    <ows:PostalCode/>
+                    <ows:Country/>
+                    <ows:ElectronicMailAddress/>
+                </ows:Address>
+            </ows:ContactInfo>
+        </ows:ServiceContact>
+    </ows:ServiceProvider>
+    <ows:OperationsMetadata>
+        <ows:Operation name="GetCapabilities">
+            <ows:DCP>
+                <ows:HTTP>
+                    <ows:Get xlink:href="http://oos.soest.hawaii.edu/thredds/sos/hioos/wqb/wqbawagg.ncml"/>
+                </ows:HTTP>
+            </ows:DCP>
+            <ows:Parameter name="Sections">
+                <ows:AllowedValues>
+                    <ows:Value>ServiceIdentification</ows:Value>
+                    <ows:Value>ServiceProvider</ows:Value>
+                    <ows:Value>OperationsMetadata</ows:Value>
+                    <ows:Value>Contents</ows:Value>
+                    <ows:Value>All</ows:Value>
+                </ows:AllowedValues>
+            </ows:Parameter>
+        </ows:Operation>
+        <ows:Operation name="GetObservation">
+            <ows:DCP>
+                <ows:HTTP>
+                    <ows:Get xlink:href="http://oos.soest.hawaii.edu/thredds/sos/hioos/wqb/wqbawagg.ncml"/>
+                </ows:HTTP>
+            </ows:DCP>
+            <ows:Parameter name="procedure" use="required">
+                <ows:AllowedValues>
+                    <ows:Value>urn:ioos:network:org.pacioos:all</ows:Value>
+                    <ows:Value>urn:ioos:station:org.pacioos:WQBAW</ows:Value>
+                    <ows:Value>urn:ioos:sensor:org.pacioos:WQBAW:temp_raw</ows:Value>
+                    <ows:Value>urn:ioos:sensor:org.pacioos:WQBAW:temp_qd</ows:Value>
+                    <ows:Value>urn:ioos:sensor:org.pacioos:WQBAW:temp</ows:Value>
+                    <ows:Value>urn:ioos:sensor:org.pacioos:WQBAW:cond_raw</ows:Value>
+                    <ows:Value>urn:ioos:sensor:org.pacioos:WQBAW:cond_qd</ows:Value>
+                    <ows:Value>urn:ioos:sensor:org.pacioos:WQBAW:cond</ows:Value>
+                    <ows:Value>urn:ioos:sensor:org.pacioos:WQBAW:salt_raw</ows:Value>
+                    <ows:Value>urn:ioos:sensor:org.pacioos:WQBAW:salt_qd</ows:Value>
+                    <ows:Value>urn:ioos:sensor:org.pacioos:WQBAW:salt</ows:Value>
+                    <ows:Value>urn:ioos:sensor:org.pacioos:WQBAW:oxyg_raw</ows:Value>
+                    <ows:Value>urn:ioos:sensor:org.pacioos:WQBAW:oxyg_qd</ows:Value>
+                    <ows:Value>urn:ioos:sensor:org.pacioos:WQBAW:oxyg</ows:Value>
+                    <ows:Value>urn:ioos:sensor:org.pacioos:WQBAW:flor_raw</ows:Value>
+                    <ows:Value>urn:ioos:sensor:org.pacioos:WQBAW:flor_qd</ows:Value>
+                    <ows:Value>urn:ioos:sensor:org.pacioos:WQBAW:flor</ows:Value>
+                    <ows:Value>urn:ioos:sensor:org.pacioos:WQBAW:turb_raw</ows:Value>
+                    <ows:Value>urn:ioos:sensor:org.pacioos:WQBAW:turb_qd</ows:Value>
+                    <ows:Value>urn:ioos:sensor:org.pacioos:WQBAW:turb</ows:Value>
+                </ows:AllowedValues>
+            </ows:Parameter>
+            <ows:Parameter name="offering" use="required">
+                <ows:AllowedValues>
+                    <ows:Value>network-all</ows:Value>
+                    <ows:Value>WQBAW</ows:Value>
+                </ows:AllowedValues>
+            </ows:Parameter>
+            <ows:Parameter name="observedProperty" use="required">
+                <ows:AllowedValues>
+                    <ows:value>temp_raw</ows:value>
+                    <ows:value>temp_qd</ows:value>
+                    <ows:value>temp</ows:value>
+                    <ows:value>cond_raw</ows:value>
+                    <ows:value>cond_qd</ows:value>
+                    <ows:value>cond</ows:value>
+                    <ows:value>salt_raw</ows:value>
+                    <ows:value>salt_qd</ows:value>
+                    <ows:value>salt</ows:value>
+                    <ows:value>oxyg_raw</ows:value>
+                    <ows:value>oxyg_qd</ows:value>
+                    <ows:value>oxyg</ows:value>
+                    <ows:value>flor_raw</ows:value>
+                    <ows:value>flor_qd</ows:value>
+                    <ows:value>flor</ows:value>
+                    <ows:value>turb_raw</ows:value>
+                    <ows:value>turb_qd</ows:value>
+                    <ows:value>turb</ows:value>
+                </ows:AllowedValues>
+            </ows:Parameter>
+            <ows:Parameter name="eventTime" use="optional">
+                <ows:AllowedValues>
+                    <ows:Range/>
+                    <ows:MinimumValue>2008-06-06T10:00:00Z</ows:MinimumValue>
+                    <ows:MaximumValue>2013-06-19T09:40:00Z</ows:MaximumValue>
+                </ows:AllowedValues>
+            </ows:Parameter>
+            <ows:Parameter name="responseFormat" use="required">
+                <ows:AllowedValues>
+                    <ows:Value>text/xml;subtype="om/1.0.0"</ows:Value>
+                    <ows:Value>text/xml;subtype="om/1.0.0/profiles/ioos_sos/1.0"</ows:Value>
+                </ows:AllowedValues>
+            </ows:Parameter>
+        </ows:Operation>
+        <ows:Operation name="DescribeSensor">
+            <ows:DCP>
+                <ows:HTTP>
+                    <ows:Get xlink:href="http://oos.soest.hawaii.edu/thredds/sos/hioos/wqb/wqbawagg.ncml"/>
+                </ows:HTTP>
+            </ows:DCP>
+            <ows:Parameter name="procedure" use="required">
+                <ows:AllowedValues>
+                    <ows:Value>urn:ioos:network:org.pacioos:all</ows:Value>
+                    <ows:Value>urn:ioos:station:org.pacioos:WQBAW</ows:Value>
+                    <ows:Value>urn:ioos:sensor:org.pacioos:WQBAW:temp_raw</ows:Value>
+                    <ows:Value>urn:ioos:sensor:org.pacioos:WQBAW:temp_qd</ows:Value>
+                    <ows:Value>urn:ioos:sensor:org.pacioos:WQBAW:temp</ows:Value>
+                    <ows:Value>urn:ioos:sensor:org.pacioos:WQBAW:cond_raw</ows:Value>
+                    <ows:Value>urn:ioos:sensor:org.pacioos:WQBAW:cond_qd</ows:Value>
+                    <ows:Value>urn:ioos:sensor:org.pacioos:WQBAW:cond</ows:Value>
+                    <ows:Value>urn:ioos:sensor:org.pacioos:WQBAW:salt_raw</ows:Value>
+                    <ows:Value>urn:ioos:sensor:org.pacioos:WQBAW:salt_qd</ows:Value>
+                    <ows:Value>urn:ioos:sensor:org.pacioos:WQBAW:salt</ows:Value>
+                    <ows:Value>urn:ioos:sensor:org.pacioos:WQBAW:oxyg_raw</ows:Value>
+                    <ows:Value>urn:ioos:sensor:org.pacioos:WQBAW:oxyg_qd</ows:Value>
+                    <ows:Value>urn:ioos:sensor:org.pacioos:WQBAW:oxyg</ows:Value>
+                    <ows:Value>urn:ioos:sensor:org.pacioos:WQBAW:flor_raw</ows:Value>
+                    <ows:Value>urn:ioos:sensor:org.pacioos:WQBAW:flor_qd</ows:Value>
+                    <ows:Value>urn:ioos:sensor:org.pacioos:WQBAW:flor</ows:Value>
+                    <ows:Value>urn:ioos:sensor:org.pacioos:WQBAW:turb_raw</ows:Value>
+                    <ows:Value>urn:ioos:sensor:org.pacioos:WQBAW:turb_qd</ows:Value>
+                    <ows:Value>urn:ioos:sensor:org.pacioos:WQBAW:turb</ows:Value>
+                </ows:AllowedValues>
+            </ows:Parameter>
+            <ows:Parameter name="responseformat" use="required">
+                <ows:AllowedValues>
+                    <ows:Value>text/xml;subtype="sensorML/1.0.1"</ows:Value>
+                </ows:AllowedValues>
+            </ows:Parameter>
+        </ows:Operation>
+        <ows:Parameter name="service" use="required">
+            <ows:AllowedValues>
+                <ows:Value>SOS</ows:Value>
+            </ows:AllowedValues>
+        </ows:Parameter>
+        <ows:Parameter name="version" use="required">
+            <ows:AllowedValues>
+                <ows:Value>1.0.0</ows:Value>
+            </ows:AllowedValues>
+        </ows:Parameter>
+    </ows:OperationsMetadata>
+    <sos:Contents>
+        <sos:ObservationOfferingList>
+            <sos:ObservationOffering gml:id="network-all">
+                <gml:description>All stations in the netCDF dataset.</gml:description>
+                <gml:name>urn:ioos:network:org.pacioos:all</gml:name>
+                <gml:srsName>EPSG:4326</gml:srsName>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+                        <gml:lowerCorner>21.27989959716797 -157.84800720214844</gml:lowerCorner>
+                        <gml:upperCorner>21.27999959716797 -157.84790720214843</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod xsi:type="gml:TimePeriodType">
+                        <gml:beginPosition>2008-06-06T10:00:00Z</gml:beginPosition>
+                        <gml:endPosition>2013-06-19T09:40:00Z</gml:endPosition>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:ioos:network:org.pacioos:all"/>
+                <sos:procedure xlink:href="urn:ioos:station:org.pacioos:WQBAW"/>
+                <sos:observedProperty xlink:href="temp_raw"/>
+                <sos:observedProperty xlink:href="temp_qd"/>
+                <sos:observedProperty xlink:href="temp"/>
+                <sos:observedProperty xlink:href="cond_raw"/>
+                <sos:observedProperty xlink:href="cond_qd"/>
+                <sos:observedProperty xlink:href="cond"/>
+                <sos:observedProperty xlink:href="salt_raw"/>
+                <sos:observedProperty xlink:href="salt_qd"/>
+                <sos:observedProperty xlink:href="salt"/>
+                <sos:observedProperty xlink:href="oxyg_raw"/>
+                <sos:observedProperty xlink:href="oxyg_qd"/>
+                <sos:observedProperty xlink:href="oxyg"/>
+                <sos:observedProperty xlink:href="flor_raw"/>
+                <sos:observedProperty xlink:href="flor_qd"/>
+                <sos:observedProperty xlink:href="flor"/>
+                <sos:observedProperty xlink:href="turb_raw"/>
+                <sos:observedProperty xlink:href="turb_qd"/>
+                <sos:observedProperty xlink:href="turb"/>
+                <sos:featureOfInterest xlink:href="urn:ioos:station:org.pacioos:WQBAW"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0.0"</sos:responseFormat>
+                <sos:responseFormat>text/xml;subtype="om/1.0.0/profiles/ioos_sos/1.0</sos:responseFormat>
+                <sos:responseModel>om:ObservationCollection</sos:responseModel>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering>
+            <sos:ObservationOffering gml:id="WQBAW">
+                <gml:name>urn:ioos:station:org.pacioos:WQBAW</gml:name>
+                <gml:srsName>EPSG:4326</gml:srsName>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+                        <gml:lowerCorner>21.27989959716797 -157.84800720214844</gml:lowerCorner>
+                        <gml:upperCorner>21.27999959716797 -157.84790720214843</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod xsi:type="gml:TimePeriodType">
+                        <gml:beginPosition>2008-06-06T10:00:00Z</gml:beginPosition>
+                        <gml:endPosition>2013-06-19T09:40:00Z</gml:endPosition>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:featureOfInterest xlink:href="urn:ioos:station:org.pacioos:WQBAW"/>
+                <sos:observedProperty xlink:href="temp_raw"/>
+                <sos:observedProperty xlink:href="temp_qd"/>
+                <sos:observedProperty xlink:href="temp"/>
+                <sos:observedProperty xlink:href="cond_raw"/>
+                <sos:observedProperty xlink:href="cond_qd"/>
+                <sos:observedProperty xlink:href="cond"/>
+                <sos:observedProperty xlink:href="salt_raw"/>
+                <sos:observedProperty xlink:href="salt_qd"/>
+                <sos:observedProperty xlink:href="salt"/>
+                <sos:observedProperty xlink:href="oxyg_raw"/>
+                <sos:observedProperty xlink:href="oxyg_qd"/>
+                <sos:observedProperty xlink:href="oxyg"/>
+                <sos:observedProperty xlink:href="flor_raw"/>
+                <sos:observedProperty xlink:href="flor_qd"/>
+                <sos:observedProperty xlink:href="flor"/>
+                <sos:observedProperty xlink:href="turb_raw"/>
+                <sos:observedProperty xlink:href="turb_qd"/>
+                <sos:observedProperty xlink:href="turb"/>
+                <sos:procedure xlink:href="urn:ioos:station:org.pacioos:WQBAW"/>
+                <sos:procedure xlink:href="urn:ioos:sensor:org.pacioos:WQBAW:temp_raw"/>
+                <sos:procedure xlink:href="urn:ioos:sensor:org.pacioos:WQBAW:temp_qd"/>
+                <sos:procedure xlink:href="urn:ioos:sensor:org.pacioos:WQBAW:temp"/>
+                <sos:procedure xlink:href="urn:ioos:sensor:org.pacioos:WQBAW:cond_raw"/>
+                <sos:procedure xlink:href="urn:ioos:sensor:org.pacioos:WQBAW:cond_qd"/>
+                <sos:procedure xlink:href="urn:ioos:sensor:org.pacioos:WQBAW:cond"/>
+                <sos:procedure xlink:href="urn:ioos:sensor:org.pacioos:WQBAW:salt_raw"/>
+                <sos:procedure xlink:href="urn:ioos:sensor:org.pacioos:WQBAW:salt_qd"/>
+                <sos:procedure xlink:href="urn:ioos:sensor:org.pacioos:WQBAW:salt"/>
+                <sos:procedure xlink:href="urn:ioos:sensor:org.pacioos:WQBAW:oxyg_raw"/>
+                <sos:procedure xlink:href="urn:ioos:sensor:org.pacioos:WQBAW:oxyg_qd"/>
+                <sos:procedure xlink:href="urn:ioos:sensor:org.pacioos:WQBAW:oxyg"/>
+                <sos:procedure xlink:href="urn:ioos:sensor:org.pacioos:WQBAW:flor_raw"/>
+                <sos:procedure xlink:href="urn:ioos:sensor:org.pacioos:WQBAW:flor_qd"/>
+                <sos:procedure xlink:href="urn:ioos:sensor:org.pacioos:WQBAW:flor"/>
+                <sos:procedure xlink:href="urn:ioos:sensor:org.pacioos:WQBAW:turb_raw"/>
+                <sos:procedure xlink:href="urn:ioos:sensor:org.pacioos:WQBAW:turb_qd"/>
+                <sos:procedure xlink:href="urn:ioos:sensor:org.pacioos:WQBAW:turb"/>
+                <sos:responseFormat>text/xml;subtype="om/1.0.0"</sos:responseFormat>
+                <sos:responseFormat>text/xml;subtype="om/1.0.0/profiles/ioos_sos/1.0</sos:responseFormat>
+                <sos:responseModel>om:ObservationCollection</sos:responseModel>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering>
+        </sos:ObservationOfferingList>
+    </sos:Contents>
+</sos:Capabilities>

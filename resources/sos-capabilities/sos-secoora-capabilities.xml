@@ -1,0 +1,1918 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sos:Capabilities xmlns:oost="http://www.oostethys.org/schemas/0.1.0/oostethys" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gml="http://www.opengis.net/gml" xmlns:swe="http://www.opengis.net/swe/1.0" xmlns:sos="http://www.opengis.net/sos/1.0" xsi:schemaLocation="http://www.opengis.net/sos/1.0 http://schemas.opengis.net/sos/1.0.0/sosGetCapabilities.xsd" version="1.0.0">
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <!-- Service Identification -->
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <ows:ServiceIdentification>
+        <ows:Title>SECOORA SOS</ows:Title>
+        <ows:Abstract/>
+        <ows:Keywords><ows:Keyword>SECOORA</ows:Keyword><ows:Keyword>Carolinas</ows:Keyword><ows:Keyword>Georgia</ows:Keyword><ows:Keyword>Florida</ows:Keyword><ows:Keyword>ocean</ows:Keyword><ows:Keyword>observing</ows:Keyword><ows:Keyword>climate</ows:Keyword><ows:Keyword>temperature</ows:Keyword><ows:Keyword>wind</ows:Keyword><ows:Keyword>air</ows:Keyword><ows:Keyword>water</ows:Keyword></ows:Keywords>
+        <ows:ServiceType codeSpace="http://opengeospatial.net">OGC:SOS</ows:ServiceType>
+        <ows:ServiceTypeVersion>1.0.0</ows:ServiceTypeVersion>
+        <ows:Fees>NONE</ows:Fees>
+        <ows:AccessConstraints>NONE</ows:AccessConstraints>
+    </ows:ServiceIdentification>
+    <!--~~~~~~~~~~~~~~~~~~~~~~-->
+    <!-- Provider Description -->
+    <!--~~~~~~~~~~~~~~~~~~~~~~-->
+    <ows:ServiceProvider>
+        <ows:ProviderName>SECOORA</ows:ProviderName>
+        <ows:ProviderSite xlink:href="http://secoora.org/"/>
+        <ows:ServiceContact>
+            <ows:IndividualName>Jeremy Cothran</ows:IndividualName>
+            <ows:PositionName/>
+            <ows:ContactInfo>
+                <ows:Phone>
+                    <ows:Voice/>
+                </ows:Phone>
+                <ows:Address>
+                    <ows:DeliveryPoint/>
+                    <ows:City/>
+                    <ows:AdministrativeArea/>
+                    <ows:PostalCode/>
+                    <ows:Country/>
+                    <ows:ElectronicMailAddress>jeremy.cothran@gmail.com</ows:ElectronicMailAddress>
+                </ows:Address>
+            </ows:ContactInfo>
+        </ows:ServiceContact>
+    </ows:ServiceProvider>
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <!-- operations Metadata Section -->
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <ows:OperationsMetadata>
+        <ows:Operation name="GetCapabilities">
+            <ows:DCP>
+                <ows:HTTP>
+                    <ows:Get xlink:href="http://neptune.baruch.sc.edu/cgi-bin/ioos_sos.cgi"/>
+                    <ows:Post xlink:href="http://neptune.baruch.sc.edu/cgi-bin/ioos_sos.cgi"/>
+                </ows:HTTP>
+            </ows:DCP>
+            <ows:Parameter name="service">
+                <ows:AllowedValues>
+                    <ows:Value>SOS</ows:Value>
+                </ows:AllowedValues>
+            </ows:Parameter>
+            <ows:Parameter name="version">
+                <ows:AllowedValues>
+                    <ows:Value>1.0.0</ows:Value>
+                </ows:AllowedValues>
+            </ows:Parameter>
+        </ows:Operation>
+        <ows:Operation name="GetObservation">
+            <ows:DCP>
+                <ows:HTTP>
+                    <ows:Get xlink:href="http://neptune.baruch.sc.edu/cgi-bin/ioos_sos.cgi"/>
+                    <ows:Post xlink:href="http://neptune.baruch.sc.edu/cgi-bin/ioos_sos.cgi"/>
+                </ows:HTTP>
+            </ows:DCP>
+            <ows:Parameter name="offering"><ows:AllowedValues><ows:Value>carocoops.CAP2.buoy</ows:Value><ows:Value>carocoops.FRP2.buoy</ows:Value><ows:Value>carocoops.SUN2.buoy</ows:Value><ows:Value>cormp.ILM2.buoy</ows:Value><ows:Value>cormp.ILM3.buoy</ows:Value><ows:Value>cormp.OCP1.buoy</ows:Value><ows:Value>cormp.SUN2WAVE.buoy</ows:Value><ows:Value>enp.bdvf1.met</ows:Value><ows:Value>enp.bnkf1.met</ows:Value><ows:Value>enp.bobf1.met</ows:Value><ows:Value>enp.bwsf1.met</ows:Value><ows:Value>enp.canf1.met</ows:Value><ows:Value>enp.cnbf1.met</ows:Value><ows:Value>enp.cwaf1.met</ows:Value><ows:Value>enp.dkkf1.met</ows:Value><ows:Value>enp.gbif1.met</ows:Value><ows:Value>enp.gbtf1.met</ows:Value><ows:Value>enp.hcef1.met</ows:Value><ows:Value>enp.jkyf1.met</ows:Value><ows:Value>enp.lbrf1.met</ows:Value><ows:Value>enp.lbsf1.met</ows:Value><ows:Value>enp.lmdf1.met</ows:Value><ows:Value>enp.lrif1.met</ows:Value><ows:Value>enp.lrkf1.met</ows:Value><ows:Value>enp.mukf1.met</ows:Value><ows:Value>enp.pkyf1.met</ows:Value><ows:Value>enp.plsf1.met</ows:Value><ows:Value>enp.ppta1.met</ows:Value><ows:Value>enp.tcvf1.met</ows:Value><ows:Value>enp.trrf1.met</ows:Value><ows:Value>enp.wiwf1.met</ows:Value><ows:Value>enp.wrbf1.met</ows:Value><ows:Value>enp.wwef1.met</ows:Value><ows:Value>enp.zbqn7.met</ows:Value><ows:Value>fit.sispnj.met</ows:Value><ows:Value>fldep.bingslanding.</ows:Value><ows:Value>fldep.binneydock.</ows:Value><ows:Value>fldep.buffalobluff.</ows:Value><ows:Value>fldep.gordonriverinlet.</ows:Value><ows:Value>fldep.melbourne.</ows:Value><ows:Value>fldep.naplesbay.</ows:Value><ows:Value>fldep.poncedeleonsouth.</ows:Value><ows:Value>fldep.portorange.</ows:Value><ows:Value>fldep.racypoint.</ows:Value><ows:Value>fldep.redbaypoint.</ows:Value><ows:Value>fldep.stlucieinlet.</ows:Value><ows:Value>fldep.tolomatoriver.</ows:Value><ows:Value>fldep.verobeach.</ows:Value><ows:Value>fwri.mtb.wq</ows:Value><ows:Value>fwri.npd.wq</ows:Value><ows:Value>fwri.otb.wq</ows:Value><ows:Value>lbhmc.2ndave.pier</ows:Value><ows:Value>lbhmc.apachepier.pier</ows:Value><ows:Value>lbhmc.cherrygrove.pier</ows:Value><ows:Value>sccf.blindpass.wq</ows:Value><ows:Value>sccf.fortmyers.wq</ows:Value><ows:Value>sccf.gulfofmexico.wq</ows:Value><ows:Value>sccf.moorehaven.wq</ows:Value><ows:Value>sccf.redfishpass.wq</ows:Value><ows:Value>sccf.shellpoint.wq</ows:Value><ows:Value>sccf.tarponbay.wq</ows:Value><ows:Value>scdnr.apachepier.pier</ows:Value><ows:Value>usace.duck.waverider</ows:Value><ows:Value>usf.ANC.NGWLMS</ows:Value><ows:Value>usf.ANM.NGWLMS</ows:Value><ows:Value>usf.APK.NGWLMS</ows:Value><ows:Value>usf.BCP.NGWLMS</ows:Value><ows:Value>usf.C10.IMET</ows:Value><ows:Value>usf.C12.weatherpak</ows:Value><ows:Value>usf.C13.ADCP</ows:Value><ows:Value>usf.C13.weatherpak</ows:Value><ows:Value>usf.C14.ADCP</ows:Value><ows:Value>usf.C14.IMET</ows:Value><ows:Value>usf.C16.ADCP</ows:Value><ows:Value>usf.C17.weatherpak</ows:Value><ows:Value>usf.C21.weatherpak</ows:Value><ows:Value>usf.EGK.NGWLMS</ows:Value><ows:Value>usf.FHP.NGWLMS</ows:Value><ows:Value>usf.HOM.NGWLMS</ows:Value><ows:Value>usf.NFB.NGWLMS</ows:Value><ows:Value>usf.PAS.NGWLMS</ows:Value><ows:Value>usf.SHP.NGWLMS</ows:Value><ows:Value>usf.TAS.NGWLMS</ows:Value></ows:AllowedValues></ows:Parameter>
+            <ows:Parameter name="time">
+                <ows:AnyValue/>
+            </ows:Parameter>
+            <ows:Parameter name="observedProperty"><ows:AllowedValues><ows:Value>air_pressure</ows:Value><ows:Value>air_temperature</ows:Value><ows:Value>blue_green_algae</ows:Value><ows:Value>bottom_chlorophyll</ows:Value><ows:Value>cdom</ows:Value><ows:Value>chl_concentration</ows:Value><ows:Value>current_speed</ows:Value><ows:Value>current_to_direction</ows:Value><ows:Value>depth</ows:Value><ows:Value>dominant_wave_period</ows:Value><ows:Value>eastward_current</ows:Value><ows:Value>nitrate</ows:Value><ows:Value>northward_current</ows:Value><ows:Value>oxygen_concentration</ows:Value><ows:Value>oxygen_saturation</ows:Value><ows:Value>ph</ows:Value><ows:Value>photosynthetic_active_radiation</ows:Value><ows:Value>precipitation</ows:Value><ows:Value>relative_humidity</ows:Value><ows:Value>salinity</ows:Value><ows:Value>significant_wave_height</ows:Value><ows:Value>surface_chlorophyll</ows:Value><ows:Value>swell_height</ows:Value><ows:Value>turbidity</ows:Value><ows:Value>water_conductivity</ows:Value><ows:Value>water_level</ows:Value><ows:Value>water_temperature</ows:Value><ows:Value>wave_from_direction</ows:Value><ows:Value>wind_from_direction</ows:Value><ows:Value>wind_gust</ows:Value><ows:Value>wind_speed</ows:Value></ows:AllowedValues></ows:Parameter>
+        </ows:Operation>
+        <ows:Operation name="DescribeSensor">
+            <ows:DCP>
+                <ows:HTTP>
+                    <ows:Get xlink:href="http://neptune.baruch.sc.edu/cgi-bin/ioos_sos.cgi"/>
+                    <ows:Post xlink:href="http://neptune.baruch.sc.edu/cgi-bin/ioos_sos.cgi"/>
+                </ows:HTTP>
+            </ows:DCP>
+            <ows:Parameter name="procedure"><ows:AllowedValues><ows:Value>urn:secoora.org:source.mooring#carocoops.CAP2.buoy</ows:Value><ows:Value>urn:secoora.org:source.mooring#carocoops.FRP2.buoy</ows:Value><ows:Value>urn:secoora.org:source.mooring#carocoops.SUN2.buoy</ows:Value><ows:Value>urn:secoora.org:source.mooring#cormp.ILM2.buoy</ows:Value><ows:Value>urn:secoora.org:source.mooring#cormp.ILM3.buoy</ows:Value><ows:Value>urn:secoora.org:source.mooring#cormp.OCP1.buoy</ows:Value><ows:Value>urn:secoora.org:source.mooring#cormp.SUN2WAVE.buoy</ows:Value><ows:Value>urn:secoora.org:source.mooring#enp.bdvf1.met</ows:Value><ows:Value>urn:secoora.org:source.mooring#enp.bnkf1.met</ows:Value><ows:Value>urn:secoora.org:source.mooring#enp.bobf1.met</ows:Value><ows:Value>urn:secoora.org:source.mooring#enp.bwsf1.met</ows:Value><ows:Value>urn:secoora.org:source.mooring#enp.canf1.met</ows:Value><ows:Value>urn:secoora.org:source.mooring#enp.cnbf1.met</ows:Value><ows:Value>urn:secoora.org:source.mooring#enp.cwaf1.met</ows:Value><ows:Value>urn:secoora.org:source.mooring#enp.dkkf1.met</ows:Value><ows:Value>urn:secoora.org:source.mooring#enp.gbif1.met</ows:Value><ows:Value>urn:secoora.org:source.mooring#enp.gbtf1.met</ows:Value><ows:Value>urn:secoora.org:source.mooring#enp.hcef1.met</ows:Value><ows:Value>urn:secoora.org:source.mooring#enp.jkyf1.met</ows:Value><ows:Value>urn:secoora.org:source.mooring#enp.lbrf1.met</ows:Value><ows:Value>urn:secoora.org:source.mooring#enp.lbsf1.met</ows:Value><ows:Value>urn:secoora.org:source.mooring#enp.lmdf1.met</ows:Value><ows:Value>urn:secoora.org:source.mooring#enp.lrif1.met</ows:Value><ows:Value>urn:secoora.org:source.mooring#enp.lrkf1.met</ows:Value><ows:Value>urn:secoora.org:source.mooring#enp.mukf1.met</ows:Value><ows:Value>urn:secoora.org:source.mooring#enp.pkyf1.met</ows:Value><ows:Value>urn:secoora.org:source.mooring#enp.plsf1.met</ows:Value><ows:Value>urn:secoora.org:source.mooring#enp.ppta1.met</ows:Value><ows:Value>urn:secoora.org:source.mooring#enp.tcvf1.met</ows:Value><ows:Value>urn:secoora.org:source.mooring#enp.trrf1.met</ows:Value><ows:Value>urn:secoora.org:source.mooring#enp.wiwf1.met</ows:Value><ows:Value>urn:secoora.org:source.mooring#enp.wrbf1.met</ows:Value><ows:Value>urn:secoora.org:source.mooring#enp.wwef1.met</ows:Value><ows:Value>urn:secoora.org:source.mooring#enp.zbqn7.met</ows:Value><ows:Value>urn:secoora.org:source.mooring#fit.sispnj.met</ows:Value><ows:Value>urn:secoora.org:source.mooring#fldep.bingslanding.</ows:Value><ows:Value>urn:secoora.org:source.mooring#fldep.binneydock.</ows:Value><ows:Value>urn:secoora.org:source.mooring#fldep.buffalobluff.</ows:Value><ows:Value>urn:secoora.org:source.mooring#fldep.gordonriverinlet.</ows:Value><ows:Value>urn:secoora.org:source.mooring#fldep.melbourne.</ows:Value><ows:Value>urn:secoora.org:source.mooring#fldep.naplesbay.</ows:Value><ows:Value>urn:secoora.org:source.mooring#fldep.poncedeleonsouth.</ows:Value><ows:Value>urn:secoora.org:source.mooring#fldep.portorange.</ows:Value><ows:Value>urn:secoora.org:source.mooring#fldep.racypoint.</ows:Value><ows:Value>urn:secoora.org:source.mooring#fldep.redbaypoint.</ows:Value><ows:Value>urn:secoora.org:source.mooring#fldep.stlucieinlet.</ows:Value><ows:Value>urn:secoora.org:source.mooring#fldep.tolomatoriver.</ows:Value><ows:Value>urn:secoora.org:source.mooring#fldep.verobeach.</ows:Value><ows:Value>urn:secoora.org:source.mooring#fwri.mtb.wq</ows:Value><ows:Value>urn:secoora.org:source.mooring#fwri.npd.wq</ows:Value><ows:Value>urn:secoora.org:source.mooring#fwri.otb.wq</ows:Value><ows:Value>urn:secoora.org:source.mooring#lbhmc.2ndave.pier</ows:Value><ows:Value>urn:secoora.org:source.mooring#lbhmc.apachepier.pier</ows:Value><ows:Value>urn:secoora.org:source.mooring#lbhmc.cherrygrove.pier</ows:Value><ows:Value>urn:secoora.org:source.mooring#sccf.blindpass.wq</ows:Value><ows:Value>urn:secoora.org:source.mooring#sccf.fortmyers.wq</ows:Value><ows:Value>urn:secoora.org:source.mooring#sccf.gulfofmexico.wq</ows:Value><ows:Value>urn:secoora.org:source.mooring#sccf.moorehaven.wq</ows:Value><ows:Value>urn:secoora.org:source.mooring#sccf.redfishpass.wq</ows:Value><ows:Value>urn:secoora.org:source.mooring#sccf.shellpoint.wq</ows:Value><ows:Value>urn:secoora.org:source.mooring#sccf.tarponbay.wq</ows:Value><ows:Value>urn:secoora.org:source.mooring#scdnr.apachepier.pier</ows:Value><ows:Value>urn:secoora.org:source.mooring#usace.duck.waverider</ows:Value><ows:Value>urn:secoora.org:source.mooring#usf.ANC.NGWLMS</ows:Value><ows:Value>urn:secoora.org:source.mooring#usf.ANM.NGWLMS</ows:Value><ows:Value>urn:secoora.org:source.mooring#usf.APK.NGWLMS</ows:Value><ows:Value>urn:secoora.org:source.mooring#usf.BCP.NGWLMS</ows:Value><ows:Value>urn:secoora.org:source.mooring#usf.C10.IMET</ows:Value><ows:Value>urn:secoora.org:source.mooring#usf.C12.weatherpak</ows:Value><ows:Value>urn:secoora.org:source.mooring#usf.C13.ADCP</ows:Value><ows:Value>urn:secoora.org:source.mooring#usf.C13.weatherpak</ows:Value><ows:Value>urn:secoora.org:source.mooring#usf.C14.ADCP</ows:Value><ows:Value>urn:secoora.org:source.mooring#usf.C14.IMET</ows:Value><ows:Value>urn:secoora.org:source.mooring#usf.C16.ADCP</ows:Value><ows:Value>urn:secoora.org:source.mooring#usf.C17.weatherpak</ows:Value><ows:Value>urn:secoora.org:source.mooring#usf.C21.weatherpak</ows:Value><ows:Value>urn:secoora.org:source.mooring#usf.EGK.NGWLMS</ows:Value><ows:Value>urn:secoora.org:source.mooring#usf.FHP.NGWLMS</ows:Value><ows:Value>urn:secoora.org:source.mooring#usf.HOM.NGWLMS</ows:Value><ows:Value>urn:secoora.org:source.mooring#usf.NFB.NGWLMS</ows:Value><ows:Value>urn:secoora.org:source.mooring#usf.PAS.NGWLMS</ows:Value><ows:Value>urn:secoora.org:source.mooring#usf.SHP.NGWLMS</ows:Value><ows:Value>urn:secoora.org:source.mooring#usf.TAS.NGWLMS</ows:Value></ows:AllowedValues></ows:Parameter>
+        </ows:Operation>
+    </ows:OperationsMetadata>
+    <!--~~~~~~~~~~~~~~~~~~~~~~~-->
+    <!-- Observation Offerings -->
+    <!--~~~~~~~~~~~~~~~~~~~~~~~-->
+    <sos:Contents>
+        <sos:ObservationOfferingList>
+            
+        <sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="carocoops.CAP2.buoy">
+                <gml:description>Mooring carocoops.CAP2.buoy data from the carocoops (carocoops) located CAROCOOPS CAP2, Capers Island Nearshore, SC</gml:description>
+                <gml:name>carocoops.CAP2.buoy</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>32.8 -79.62</gml:lowerCorner>
+                        <gml:upperCorner>32.8 -79.62</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="carocoops.CAP2.buoy_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#carocoops.CAP2.buoy"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_speed"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_gust"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_from_direction"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/swell_height"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/salinity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/relative_humidity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/northward_current"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/eastward_current"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/current_to_direction"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/current_speed"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/chl_concentration"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_pressure"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="carocoops.FRP2.buoy">
+                <gml:description>Mooring carocoops.FRP2.buoy data from the carocoops (carocoops) located CAROCOOPS FRP2, Fripp Nearshore, SC</gml:description>
+                <gml:name>carocoops.FRP2.buoy</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>32.27 -80.4</gml:lowerCorner>
+                        <gml:upperCorner>32.27 -80.4</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="carocoops.FRP2.buoy_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#carocoops.FRP2.buoy"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_speed"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_gust"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_from_direction"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/salinity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/relative_humidity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/northward_current"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/eastward_current"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/current_to_direction"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/current_speed"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/chl_concentration"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_pressure"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="carocoops.SUN2.buoy">
+                <gml:description>Mooring carocoops.SUN2.buoy data from the carocoops (carocoops) located CAROCOOPS SUN2, Sunset Nearshore, NC</gml:description>
+                <gml:name>carocoops.SUN2.buoy</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>33.84 -78.48</gml:lowerCorner>
+                        <gml:upperCorner>33.84 -78.48</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="carocoops.SUN2.buoy_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#carocoops.SUN2.buoy"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_speed"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_gust"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_from_direction"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/salinity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/relative_humidity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/northward_current"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/eastward_current"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/current_to_direction"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/current_speed"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/chl_concentration"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_pressure"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="cormp.ILM2.buoy">
+                <gml:description>Mooring cormp.ILM2.buoy data from the cormp (cormp) located CORMP ILM2, Wrightsville Beach Nearshore, NC</gml:description>
+                <gml:name>cormp.ILM2.buoy</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>34.14 -77.71</gml:lowerCorner>
+                        <gml:upperCorner>34.14 -77.71</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="cormp.ILM2.buoy_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#cormp.ILM2.buoy"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_speed"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_gust"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_from_direction"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/significant_wave_height"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/salinity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/relative_humidity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/dominant_wave_period"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/current_to_direction"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/current_speed"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_pressure"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="cormp.ILM3.buoy">
+                <gml:description>Mooring cormp.ILM3.buoy data from the cormp (cormp) located CORMP ILM3, Wrightsville Beach Offshore, NC</gml:description>
+                <gml:name>cormp.ILM3.buoy</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>33.99 -77.36</gml:lowerCorner>
+                        <gml:upperCorner>33.99 -77.36</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="cormp.ILM3.buoy_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#cormp.ILM3.buoy"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_speed"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_gust"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_from_direction"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/salinity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/relative_humidity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/current_to_direction"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/current_speed"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_pressure"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="cormp.OCP1.buoy">
+                <gml:description>Mooring cormp.OCP1.buoy data from the cormp (cormp) located CORMP OCP1, Ocean Crest Pier,NC</gml:description>
+                <gml:name>cormp.OCP1.buoy</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>33.9 -78.15</gml:lowerCorner>
+                        <gml:upperCorner>33.9 -78.15</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="cormp.OCP1.buoy_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#cormp.OCP1.buoy"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_speed"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_gust"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_from_direction"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/swell_height"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/significant_wave_height"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/salinity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/relative_humidity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/northward_current"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/eastward_current"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/dominant_wave_period"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/current_to_direction"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/current_speed"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_pressure"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="cormp.SUN2WAVE.buoy">
+                <gml:description>Mooring cormp.SUN2WAVE.buoy data from the cormp (cormp) located </gml:description>
+                <gml:name>cormp.SUN2WAVE.buoy</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>33.8428 -78.477</gml:lowerCorner>
+                        <gml:upperCorner>33.8428 -78.477</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="cormp.SUN2WAVE.buoy_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#cormp.SUN2WAVE.buoy"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wave_from_direction"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/significant_wave_height"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/dominant_wave_period"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/current_to_direction"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/current_speed"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="enp.bdvf1.met">
+                <gml:description>Mooring enp.bdvf1.met data from the enp (enp) located Broad River, FL</gml:description>
+                <gml:name>enp.bdvf1.met</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>25.476 -80.99</gml:lowerCorner>
+                        <gml:upperCorner>25.476 -80.99</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="enp.bdvf1.met_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#enp.bdvf1.met"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="enp.bnkf1.met">
+                <gml:description>Mooring enp.bnkf1.met data from the enp (enp) located Butternut Key, FL</gml:description>
+                <gml:name>enp.bnkf1.met</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>25.087 -80.519</gml:lowerCorner>
+                        <gml:upperCorner>25.087 -80.519</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="enp.bnkf1.met_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#enp.bnkf1.met"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="enp.bobf1.met">
+                <gml:description>Mooring enp.bobf1.met data from the enp (enp) located Bob Allen, FL</gml:description>
+                <gml:name>enp.bobf1.met</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>25.024 -80.682</gml:lowerCorner>
+                        <gml:upperCorner>25.024 -80.682</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="enp.bobf1.met_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#enp.bobf1.met"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="enp.bwsf1.met">
+                <gml:description>Mooring enp.bwsf1.met data from the enp (enp) located Blackwater Sound, FL</gml:description>
+                <gml:name>enp.bwsf1.met</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>25.177 -80.438</gml:lowerCorner>
+                        <gml:upperCorner>25.177 -80.438</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="enp.bwsf1.met_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#enp.bwsf1.met"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="enp.canf1.met">
+                <gml:description>Mooring enp.canf1.met data from the enp (enp) located Cane Patch, FL</gml:description>
+                <gml:name>enp.canf1.met</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>25.42 -80.943</gml:lowerCorner>
+                        <gml:upperCorner>25.42 -80.943</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="enp.canf1.met_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#enp.canf1.met"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="enp.cnbf1.met">
+                <gml:description>Mooring enp.cnbf1.met data from the enp (enp) located Cannon Bay, FL</gml:description>
+                <gml:name>enp.cnbf1.met</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>25.7 -81.186</gml:lowerCorner>
+                        <gml:upperCorner>25.7 -81.186</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="enp.cnbf1.met_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#enp.cnbf1.met"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="enp.cwaf1.met">
+                <gml:description>Mooring enp.cwaf1.met data from the enp (enp) located Clear Water Pass, FL </gml:description>
+                <gml:name>enp.cwaf1.met</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>25.295 -81.013</gml:lowerCorner>
+                        <gml:upperCorner>25.295 -81.013</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="enp.cwaf1.met_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#enp.cwaf1.met"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="enp.dkkf1.met">
+                <gml:description>Mooring enp.dkkf1.met data from the enp (enp) located Duck Key, FL</gml:description>
+                <gml:name>enp.dkkf1.met</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>25.18 -80.49</gml:lowerCorner>
+                        <gml:upperCorner>25.18 -80.49</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="enp.dkkf1.met_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#enp.dkkf1.met"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="enp.gbif1.met">
+                <gml:description>Mooring enp.gbif1.met data from the enp (enp) located Gunboat Island, FL</gml:description>
+                <gml:name>enp.gbif1.met</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>25.376 -81.029</gml:lowerCorner>
+                        <gml:upperCorner>25.376 -81.029</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="enp.gbif1.met_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#enp.gbif1.met"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="enp.gbtf1.met">
+                <gml:description>Mooring enp.gbtf1.met data from the enp (enp) located Garfield Bight, FL</gml:description>
+                <gml:name>enp.gbtf1.met</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>25.17 -80.797</gml:lowerCorner>
+                        <gml:upperCorner>25.17 -80.797</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="enp.gbtf1.met_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#enp.gbtf1.met"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="enp.hcef1.met">
+                <gml:description>Mooring enp.hcef1.met data from the enp (enp) located Highway Creek, FL</gml:description>
+                <gml:name>enp.hcef1.met</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>25.254 -80.444</gml:lowerCorner>
+                        <gml:upperCorner>25.254 -80.444</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="enp.hcef1.met_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#enp.hcef1.met"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="enp.jkyf1.met">
+                <gml:description>Mooring enp.jkyf1.met data from the enp (enp) located Johnson Key, FL</gml:description>
+                <gml:name>enp.jkyf1.met</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>25.05 -80.904</gml:lowerCorner>
+                        <gml:upperCorner>25.05 -80.904</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="enp.jkyf1.met_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#enp.jkyf1.met"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="enp.lbrf1.met">
+                <gml:description>Mooring enp.lbrf1.met data from the enp (enp) located Broad River Lower, FL</gml:description>
+                <gml:name>enp.lbrf1.met</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>25.484 -81.111</gml:lowerCorner>
+                        <gml:upperCorner>25.484 -81.111</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="enp.lbrf1.met_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#enp.lbrf1.met"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="enp.lbsf1.met">
+                <gml:description>Mooring enp.lbsf1.met data from the enp (enp) located Little Blackwater, FL</gml:description>
+                <gml:name>enp.lbsf1.met</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>25.212 -80.433</gml:lowerCorner>
+                        <gml:upperCorner>25.212 -80.433</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="enp.lbsf1.met_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#enp.lbsf1.met"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="enp.lmdf1.met">
+                <gml:description>Mooring enp.lmdf1.met data from the enp (enp) located Little Madeira, FL</gml:description>
+                <gml:name>enp.lmdf1.met</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>25.174 -80.632</gml:lowerCorner>
+                        <gml:upperCorner>25.174 -80.632</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="enp.lmdf1.met_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#enp.lmdf1.met"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="enp.lrif1.met">
+                <gml:description>Mooring enp.lrif1.met data from the enp (enp) located Lane River, FL </gml:description>
+                <gml:name>enp.lrif1.met</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>25.284 -80.894</gml:lowerCorner>
+                        <gml:upperCorner>25.284 -80.894</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="enp.lrif1.met_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#enp.lrif1.met"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="enp.lrkf1.met">
+                <gml:description>Mooring enp.lrkf1.met data from the enp (enp) located Little Rabbit Key, FL</gml:description>
+                <gml:name>enp.lrkf1.met</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>24.979 -80.826</gml:lowerCorner>
+                        <gml:upperCorner>24.979 -80.826</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="enp.lrkf1.met_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#enp.lrkf1.met"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="enp.mukf1.met">
+                <gml:description>Mooring enp.mukf1.met data from the enp (enp) located Murray Key, FL</gml:description>
+                <gml:name>enp.mukf1.met</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>25.104 -80.942</gml:lowerCorner>
+                        <gml:upperCorner>25.104 -80.942</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="enp.mukf1.met_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#enp.mukf1.met"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="enp.pkyf1.met">
+                <gml:description>Mooring enp.pkyf1.met data from the enp (enp) located Peterson Key, FL</gml:description>
+                <gml:name>enp.pkyf1.met</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>24.917 -80.746</gml:lowerCorner>
+                        <gml:upperCorner>24.917 -80.746</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="enp.pkyf1.met_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#enp.pkyf1.met"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="enp.plsf1.met">
+                <gml:description>Mooring enp.plsf1.met data from the enp (enp) located Pulaski Shoal Light, FL</gml:description>
+                <gml:name>enp.plsf1.met</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>24.693 -82.773</gml:lowerCorner>
+                        <gml:upperCorner>24.693 -82.773</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="enp.plsf1.met_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#enp.plsf1.met"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_speed"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_gust"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_from_direction"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_pressure"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="enp.ppta1.met">
+                <gml:description>Mooring enp.ppta1.met data from the enp (enp) located Perdido Key, AL</gml:description>
+                <gml:name>enp.ppta1.met</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>30.279 -87.556</gml:lowerCorner>
+                        <gml:upperCorner>30.279 -87.556</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="enp.ppta1.met_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#enp.ppta1.met"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_speed"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_gust"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_from_direction"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_pressure"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="enp.tcvf1.met">
+                <gml:description>Mooring enp.tcvf1.met data from the enp (enp) located Trout Cove, FL</gml:description>
+                <gml:name>enp.tcvf1.met</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>25.209 -80.533</gml:lowerCorner>
+                        <gml:upperCorner>25.209 -80.533</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="enp.tcvf1.met_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#enp.tcvf1.met"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="enp.trrf1.met">
+                <gml:description>Mooring enp.trrf1.met data from the enp (enp) located Taylor River, FL</gml:description>
+                <gml:name>enp.trrf1.met</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>25.223 -80.653</gml:lowerCorner>
+                        <gml:upperCorner>25.223 -80.653</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="enp.trrf1.met_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#enp.trrf1.met"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="enp.wiwf1.met">
+                <gml:description>Mooring enp.wiwf1.met data from the enp (enp) located Willy Willy, FL</gml:description>
+                <gml:name>enp.wiwf1.met</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>25.619 -81.044</gml:lowerCorner>
+                        <gml:upperCorner>25.619 -81.044</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="enp.wiwf1.met_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#enp.wiwf1.met"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="enp.wrbf1.met">
+                <gml:description>Mooring enp.wrbf1.met data from the enp (enp) located Whipray Basin, FL</gml:description>
+                <gml:name>enp.wrbf1.met</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>25.077 -80.728</gml:lowerCorner>
+                        <gml:upperCorner>25.077 -80.728</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="enp.wrbf1.met_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#enp.wrbf1.met"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="enp.wwef1.met">
+                <gml:description>Mooring enp.wwef1.met data from the enp (enp) located White Water -West, FL</gml:description>
+                <gml:name>enp.wwef1.met</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>25.23 -80.939</gml:lowerCorner>
+                        <gml:upperCorner>25.23 -80.939</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="enp.wwef1.met_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#enp.wwef1.met"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="enp.zbqn7.met">
+                <gml:description>Mooring enp.zbqn7.met data from the enp (enp) located Zeke's Basin, North Carolina</gml:description>
+                <gml:name>enp.zbqn7.met</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>33.955 -77.935</gml:lowerCorner>
+                        <gml:upperCorner>33.955 -77.935</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="enp.zbqn7.met_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#enp.zbqn7.met"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_conductivity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/salinity"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="fit.sispnj.met">
+                <gml:description>Mooring fit.sispnj.met data from the fit (fit) located Sebastian Inlet met station</gml:description>
+                <gml:name>fit.sispnj.met</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>27.861667 -80.444722</gml:lowerCorner>
+                        <gml:upperCorner>27.861667 -80.444722</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="fit.sispnj.met_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#fit.sispnj.met"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_speed"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_from_direction"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/salinity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/depth"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_pressure"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="fldep.bingslanding.">
+                <gml:description>Mooring fldep.bingslanding. data from the fldep (fldep) located Bing&amp;#39;s Landing station</gml:description>
+                <gml:name>fldep.bingslanding.</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>29.615417 -81.204917</gml:lowerCorner>
+                        <gml:upperCorner>29.615417 -81.204917</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="fldep.bingslanding._valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#fldep.bingslanding."/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_speed"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_from_direction"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_level"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_conductivity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/salinity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/relative_humidity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/precipitation"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/ph"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_pressure"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="fldep.binneydock.">
+                <gml:description>Mooring fldep.binneydock. data from the fldep (fldep) located Binney Dock station</gml:description>
+                <gml:name>fldep.binneydock.</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>27.467547 -80.30085</gml:lowerCorner>
+                        <gml:upperCorner>27.467547 -80.30085</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="fldep.binneydock._valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#fldep.binneydock."/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_speed"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_from_direction"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_level"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_conductivity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/salinity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/relative_humidity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/precipitation"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/ph"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_pressure"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="fldep.buffalobluff.">
+                <gml:description>Mooring fldep.buffalobluff. data from the fldep (fldep) located Buffalo Bluff station</gml:description>
+                <gml:name>fldep.buffalobluff.</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>29.594333 -81.681389</gml:lowerCorner>
+                        <gml:upperCorner>29.594333 -81.681389</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="fldep.buffalobluff._valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#fldep.buffalobluff."/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_speed"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_from_direction"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_level"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_conductivity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/salinity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/relative_humidity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/precipitation"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_pressure"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="fldep.gordonriverinlet.">
+                <gml:description>Mooring fldep.gordonriverinlet. data from the fldep (fldep) located Gordon River Inlet station</gml:description>
+                <gml:name>fldep.gordonriverinlet.</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>26.093139 -81.798139</gml:lowerCorner>
+                        <gml:upperCorner>26.093139 -81.798139</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="fldep.gordonriverinlet._valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#fldep.gordonriverinlet."/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_speed"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_from_direction"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_level"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_conductivity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/salinity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/relative_humidity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/precipitation"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/ph"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_pressure"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="fldep.melbourne.">
+                <gml:description>Mooring fldep.melbourne. data from the fldep (fldep) located Melbourne station</gml:description>
+                <gml:name>fldep.melbourne.</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>28.083675 -80.591972</gml:lowerCorner>
+                        <gml:upperCorner>28.083675 -80.591972</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="fldep.melbourne._valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#fldep.melbourne."/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_speed"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_from_direction"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_level"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_conductivity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/salinity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/relative_humidity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/precipitation"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/ph"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_pressure"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="fldep.naplesbay.">
+                <gml:description>Mooring fldep.naplesbay. data from the fldep (fldep) located Naples Bay station</gml:description>
+                <gml:name>fldep.naplesbay.</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>26.141778 -81.790056</gml:lowerCorner>
+                        <gml:upperCorner>26.141778 -81.790056</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="fldep.naplesbay._valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#fldep.naplesbay."/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_speed"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_from_direction"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_level"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_conductivity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/salinity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/relative_humidity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/precipitation"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/ph"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_pressure"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="fldep.poncedeleonsouth.">
+                <gml:description>Mooring fldep.poncedeleonsouth. data from the fldep (fldep) located Ponce De Leon South station</gml:description>
+                <gml:name>fldep.poncedeleonsouth.</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>29.063472 -80.916083</gml:lowerCorner>
+                        <gml:upperCorner>29.063472 -80.916083</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="fldep.poncedeleonsouth._valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#fldep.poncedeleonsouth."/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_speed"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_from_direction"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_level"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_conductivity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/salinity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/relative_humidity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/precipitation"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/ph"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_pressure"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="fldep.portorange.">
+                <gml:description>Mooring fldep.portorange. data from the fldep (fldep) located Port Orange station</gml:description>
+                <gml:name>fldep.portorange.</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>29.148 -80.975306</gml:lowerCorner>
+                        <gml:upperCorner>29.148 -80.975306</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="fldep.portorange._valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#fldep.portorange."/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_speed"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_from_direction"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_level"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_conductivity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/salinity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/relative_humidity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/precipitation"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/ph"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_pressure"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="fldep.racypoint.">
+                <gml:description>Mooring fldep.racypoint. data from the fldep (fldep) located Racy Point station</gml:description>
+                <gml:name>fldep.racypoint.</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>29.800167 -81.549889</gml:lowerCorner>
+                        <gml:upperCorner>29.800167 -81.549889</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="fldep.racypoint._valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#fldep.racypoint."/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_speed"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_from_direction"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_level"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_conductivity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/salinity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/relative_humidity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/precipitation"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/ph"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_pressure"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="fldep.redbaypoint.">
+                <gml:description>Mooring fldep.redbaypoint. data from the fldep (fldep) located Red Bay Point station</gml:description>
+                <gml:name>fldep.redbaypoint.</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>29.982111 -81.633806</gml:lowerCorner>
+                        <gml:upperCorner>29.982111 -81.633806</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="fldep.redbaypoint._valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#fldep.redbaypoint."/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_speed"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_from_direction"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_level"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_conductivity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/salinity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/relative_humidity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/precipitation"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/ph"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_pressure"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="fldep.stlucieinlet.">
+                <gml:description>Mooring fldep.stlucieinlet. data from the fldep (fldep) located St Lucie Inlet station</gml:description>
+                <gml:name>fldep.stlucieinlet.</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>27.165278 -80.162778</gml:lowerCorner>
+                        <gml:upperCorner>27.165278 -80.162778</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="fldep.stlucieinlet._valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#fldep.stlucieinlet."/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_speed"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_from_direction"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_level"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_conductivity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/salinity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/relative_humidity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/precipitation"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/ph"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_pressure"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="fldep.tolomatoriver.">
+                <gml:description>Mooring fldep.tolomatoriver. data from the fldep (fldep) located Tolomato River station</gml:description>
+                <gml:name>fldep.tolomatoriver.</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>29.994722 -81.329556</gml:lowerCorner>
+                        <gml:upperCorner>29.994722 -81.329556</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="fldep.tolomatoriver._valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#fldep.tolomatoriver."/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_speed"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_from_direction"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_level"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_conductivity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/salinity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/relative_humidity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/precipitation"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/ph"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_pressure"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="fldep.verobeach.">
+                <gml:description>Mooring fldep.verobeach. data from the fldep (fldep) located Vero Beach station</gml:description>
+                <gml:name>fldep.verobeach.</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>27.632056 -80.371222</gml:lowerCorner>
+                        <gml:upperCorner>27.632056 -80.371222</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="fldep.verobeach._valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#fldep.verobeach."/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_speed"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_from_direction"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_level"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_conductivity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/salinity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/relative_humidity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/precipitation"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/ph"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_pressure"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="fwri.mtb.wq">
+                <gml:description>Mooring fwri.mtb.wq data from the fwri (fwri) located Middle Tampa Bay</gml:description>
+                <gml:name>fwri.mtb.wq</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>27.661 -82.594</gml:lowerCorner>
+                        <gml:upperCorner>27.661 -82.594</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="fwri.mtb.wq_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#fwri.mtb.wq"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/turbidity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/salinity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/precipitation"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/photosynthetic_active_radiation"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/ph"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/oxygen_concentration"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/nitrate"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/depth"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/chl_concentration"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/blue_green_algae"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="fwri.npd.wq">
+                <gml:description>Mooring fwri.npd.wq data from the fwri (fwri) located New Pass Dock</gml:description>
+                <gml:name>fwri.npd.wq</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>27.333752 -82.579374</gml:lowerCorner>
+                        <gml:upperCorner>27.333752 -82.579374</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="fwri.npd.wq_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#fwri.npd.wq"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/turbidity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/salinity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/ph"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/oxygen_concentration"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/chl_concentration"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/blue_green_algae"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="fwri.otb.wq">
+                <gml:description>Mooring fwri.otb.wq data from the fwri (fwri) located Old Tampa Bay</gml:description>
+                <gml:name>fwri.otb.wq</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>27.932003 -82.647455</gml:lowerCorner>
+                        <gml:upperCorner>27.932003 -82.647455</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="fwri.otb.wq_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#fwri.otb.wq"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_speed"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_from_direction"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/turbidity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/salinity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/relative_humidity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/precipitation"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/photosynthetic_active_radiation"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/ph"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/oxygen_concentration"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/northward_current"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/eastward_current"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/current_speed"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/chl_concentration"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/blue_green_algae"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_pressure"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="lbhmc.2ndave.pier">
+                <gml:description>Mooring lbhmc.2ndave.pier data from the lbhmc (lbhmc) located 2nd Ave North Pier, Myrtle Beach, SC</gml:description>
+                <gml:name>lbhmc.2ndave.pier</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>33.682675 -78.884143</gml:lowerCorner>
+                        <gml:upperCorner>33.682675 -78.884143</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="lbhmc.2ndave.pier_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#lbhmc.2ndave.pier"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_speed"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_from_direction"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/turbidity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/surface_chlorophyll"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/salinity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/relative_humidity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/precipitation"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/oxygen_concentration"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/depth"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/bottom_chlorophyll"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_pressure"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="lbhmc.apachepier.pier">
+                <gml:description>Mooring lbhmc.apachepier.pier data from the lbhmc (lbhmc) located Apache Pier, Myrtle Beach, SC</gml:description>
+                <gml:name>lbhmc.apachepier.pier</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>33.76152 -78.779878</gml:lowerCorner>
+                        <gml:upperCorner>33.76152 -78.779878</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="lbhmc.apachepier.pier_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#lbhmc.apachepier.pier"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_speed"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_from_direction"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/turbidity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/salinity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/relative_humidity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/precipitation"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/oxygen_concentration"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/depth"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_pressure"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="lbhmc.cherrygrove.pier">
+                <gml:description>Mooring lbhmc.cherrygrove.pier data from the lbhmc (lbhmc) located Cherry Grove Pier, N. Myrtle Beach, SC</gml:description>
+                <gml:name>lbhmc.cherrygrove.pier</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>33.827491 -78.632003</gml:lowerCorner>
+                        <gml:upperCorner>33.827491 -78.632003</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="lbhmc.cherrygrove.pier_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#lbhmc.cherrygrove.pier"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_speed"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_from_direction"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/turbidity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/surface_chlorophyll"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/salinity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/relative_humidity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/precipitation"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/oxygen_concentration"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/depth"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/bottom_chlorophyll"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_pressure"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="sccf.blindpass.wq">
+                <gml:description>Mooring sccf.blindpass.wq data from the sccf (sccf) located Blind Pass station</gml:description>
+                <gml:name>sccf.blindpass.wq</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>26.50754 -82.15477</gml:lowerCorner>
+                        <gml:upperCorner>26.50754 -82.15477</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="sccf.blindpass.wq_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#sccf.blindpass.wq"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_conductivity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/turbidity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/salinity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/oxygen_saturation"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/oxygen_concentration"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/nitrate"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/depth"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/chl_concentration"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/cdom"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="sccf.fortmyers.wq">
+                <gml:description>Mooring sccf.fortmyers.wq data from the sccf (sccf) located Fort Myers station</gml:description>
+                <gml:name>sccf.fortmyers.wq</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>26.64934 -81.88097</gml:lowerCorner>
+                        <gml:upperCorner>26.64934 -81.88097</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="sccf.fortmyers.wq_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#sccf.fortmyers.wq"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_conductivity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/turbidity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/salinity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/oxygen_saturation"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/oxygen_concentration"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/nitrate"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/depth"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/chl_concentration"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/cdom"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="sccf.gulfofmexico.wq">
+                <gml:description>Mooring sccf.gulfofmexico.wq data from the sccf (sccf) located Gulf of Mexico station</gml:description>
+                <gml:name>sccf.gulfofmexico.wq</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>26.44303 -81.97119</gml:lowerCorner>
+                        <gml:upperCorner>26.44303 -81.97119</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="sccf.gulfofmexico.wq_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#sccf.gulfofmexico.wq"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_conductivity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/turbidity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/salinity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/oxygen_saturation"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/oxygen_concentration"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/nitrate"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/depth"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/chl_concentration"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/cdom"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="sccf.moorehaven.wq">
+                <gml:description>Mooring sccf.moorehaven.wq data from the sccf (sccf) located Moore Haven station</gml:description>
+                <gml:name>sccf.moorehaven.wq</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>26.8357 -81.08815</gml:lowerCorner>
+                        <gml:upperCorner>26.8357 -81.08815</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="sccf.moorehaven.wq_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#sccf.moorehaven.wq"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_conductivity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/turbidity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/salinity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/oxygen_saturation"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/oxygen_concentration"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/nitrate"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/depth"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/chl_concentration"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/cdom"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="sccf.redfishpass.wq">
+                <gml:description>Mooring sccf.redfishpass.wq data from the sccf (sccf) located Redfish Pass station</gml:description>
+                <gml:name>sccf.redfishpass.wq</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>26.56157 -82.17544</gml:lowerCorner>
+                        <gml:upperCorner>26.56157 -82.17544</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="sccf.redfishpass.wq_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#sccf.redfishpass.wq"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_conductivity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/turbidity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/salinity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/oxygen_saturation"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/oxygen_concentration"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/nitrate"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/depth"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/chl_concentration"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/cdom"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="sccf.shellpoint.wq">
+                <gml:description>Mooring sccf.shellpoint.wq data from the sccf (sccf) located Shell Point station</gml:description>
+                <gml:name>sccf.shellpoint.wq</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>26.522564 -82.007988</gml:lowerCorner>
+                        <gml:upperCorner>26.522564 -82.007988</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="sccf.shellpoint.wq_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#sccf.shellpoint.wq"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_conductivity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/turbidity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/salinity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/oxygen_saturation"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/oxygen_concentration"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/nitrate"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/depth"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/chl_concentration"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/cdom"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="sccf.tarponbay.wq">
+                <gml:description>Mooring sccf.tarponbay.wq data from the sccf (sccf) located Tarpon Bay station</gml:description>
+                <gml:name>sccf.tarponbay.wq</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>26.467907 -82.063099</gml:lowerCorner>
+                        <gml:upperCorner>26.467907 -82.063099</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="sccf.tarponbay.wq_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#sccf.tarponbay.wq"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_conductivity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/turbidity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/salinity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/oxygen_saturation"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/oxygen_concentration"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/nitrate"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/depth"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/chl_concentration"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/cdom"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="scdnr.apachepier.pier">
+                <gml:description>Mooring scdnr.apachepier.pier data from the scdnr (scdnr) located </gml:description>
+                <gml:name>scdnr.apachepier.pier</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>33.76152 -78.779878</gml:lowerCorner>
+                        <gml:upperCorner>33.76152 -78.779878</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="scdnr.apachepier.pier_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#scdnr.apachepier.pier"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_speed"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_from_direction"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/salinity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/relative_humidity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/precipitation"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/oxygen_concentration"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/depth"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_temperature"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="usace.duck.waverider">
+                <gml:description>Mooring usace.duck.waverider data from the usace (usace) located Duck Pier</gml:description>
+                <gml:name>usace.duck.waverider</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>36.2576 -75.5911</gml:lowerCorner>
+                        <gml:upperCorner>36.2576 -75.5911</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="usace.duck.waverider_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#usace.duck.waverider"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/dominant_wave_period"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="usf.ANC.NGWLMS">
+                <gml:description>Mooring usf.ANC.NGWLMS data from the usf (usf) located Anclote Gulf Park</gml:description>
+                <gml:name>usf.ANC.NGWLMS</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>28.19 -82.79</gml:lowerCorner>
+                        <gml:upperCorner>28.19 -82.79</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="usf.ANC.NGWLMS_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#usf.ANC.NGWLMS"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_speed"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_gust"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_from_direction"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_level"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/salinity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_pressure"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="usf.ANM.NGWLMS">
+                <gml:description>Mooring usf.ANM.NGWLMS data from the usf (usf) located Anna Maria</gml:description>
+                <gml:name>usf.ANM.NGWLMS</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>27.54 -82.74</gml:lowerCorner>
+                        <gml:upperCorner>27.54 -82.74</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="usf.ANM.NGWLMS_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#usf.ANM.NGWLMS"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_speed"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_gust"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_from_direction"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_level"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/salinity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_pressure"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="usf.APK.NGWLMS">
+                <gml:description>Mooring usf.APK.NGWLMS data from the usf (usf) located Aripeka</gml:description>
+                <gml:name>usf.APK.NGWLMS</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>28.433001 -82.667</gml:lowerCorner>
+                        <gml:upperCorner>28.433001 -82.667</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="usf.APK.NGWLMS_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#usf.APK.NGWLMS"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_speed"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_gust"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_from_direction"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_level"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/salinity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_pressure"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="usf.BCP.NGWLMS">
+                <gml:description>Mooring usf.BCP.NGWLMS data from the usf (usf) located Big Carlos Pass</gml:description>
+                <gml:name>usf.BCP.NGWLMS</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>26.4 -81.88</gml:lowerCorner>
+                        <gml:upperCorner>26.4 -81.88</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="usf.BCP.NGWLMS_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#usf.BCP.NGWLMS"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_speed"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_gust"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_from_direction"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_level"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/salinity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_pressure"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="usf.C10.IMET">
+                <gml:description>Mooring usf.C10.IMET data from the usf (usf) located </gml:description>
+                <gml:name>usf.C10.IMET</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>27.167999 -82.928001</gml:lowerCorner>
+                        <gml:upperCorner>27.167999 -82.928001</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="usf.C10.IMET_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#usf.C10.IMET"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_speed"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_gust"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_from_direction"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/significant_wave_height"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/northward_current"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/eastward_current"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/dominant_wave_period"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/current_to_direction"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/current_speed"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_pressure"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="usf.C12.weatherpak">
+                <gml:description>Mooring usf.C12.weatherpak data from the usf (usf) located </gml:description>
+                <gml:name>usf.C12.weatherpak</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>27.5 -83.72</gml:lowerCorner>
+                        <gml:upperCorner>27.5 -83.72</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="usf.C12.weatherpak_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#usf.C12.weatherpak"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_speed"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_from_direction"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_pressure"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="usf.C13.ADCP">
+                <gml:description>Mooring usf.C13.ADCP data from the usf (usf) located </gml:description>
+                <gml:name>usf.C13.ADCP</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>26.06 -83.08</gml:lowerCorner>
+                        <gml:upperCorner>26.06 -83.08</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="usf.C13.ADCP_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#usf.C13.ADCP"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_speed"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_from_direction"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/current_to_direction"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/current_speed"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_pressure"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="usf.C13.weatherpak">
+                <gml:description>Mooring usf.C13.weatherpak data from the usf (usf) located </gml:description>
+                <gml:name>usf.C13.weatherpak</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>26.058001 -83.078003</gml:lowerCorner>
+                        <gml:upperCorner>26.058001 -83.078003</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="usf.C13.weatherpak_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#usf.C13.weatherpak"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_speed"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_from_direction"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_pressure"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="usf.C14.ADCP">
+                <gml:description>Mooring usf.C14.ADCP data from the usf (usf) located </gml:description>
+                <gml:name>usf.C14.ADCP</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>28.31 -83.4</gml:lowerCorner>
+                        <gml:upperCorner>28.31 -83.4</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="usf.C14.ADCP_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#usf.C14.ADCP"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_speed"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_gust"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_from_direction"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/swell_height"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/northward_current"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/eastward_current"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/current_to_direction"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/current_speed"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_pressure"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="usf.C14.IMET">
+                <gml:description>Mooring usf.C14.IMET data from the usf (usf) located </gml:description>
+                <gml:name>usf.C14.IMET</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>28.306 -83.398003</gml:lowerCorner>
+                        <gml:upperCorner>28.306 -83.398003</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="usf.C14.IMET_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#usf.C14.IMET"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_speed"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_gust"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_from_direction"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_pressure"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="usf.C16.ADCP">
+                <gml:description>Mooring usf.C16.ADCP data from the usf (usf) located </gml:description>
+                <gml:name>usf.C16.ADCP</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>27.389999 -84.25</gml:lowerCorner>
+                        <gml:upperCorner>27.389999 -84.25</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="usf.C16.ADCP_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#usf.C16.ADCP"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/swell_height"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/northward_current"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/eastward_current"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/current_to_direction"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/current_speed"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="usf.C17.weatherpak">
+                <gml:description>Mooring usf.C17.weatherpak data from the usf (usf) located </gml:description>
+                <gml:name>usf.C17.weatherpak</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>25.424999 -82.214996</gml:lowerCorner>
+                        <gml:upperCorner>25.424999 -82.214996</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="usf.C17.weatherpak_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#usf.C17.weatherpak"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_speed"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_from_direction"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_pressure"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="usf.C21.weatherpak">
+                <gml:description>Mooring usf.C21.weatherpak data from the usf (usf) located </gml:description>
+                <gml:name>usf.C21.weatherpak</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>27.677999 -82.768997</gml:lowerCorner>
+                        <gml:upperCorner>27.677999 -82.768997</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="usf.C21.weatherpak_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#usf.C21.weatherpak"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_speed"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_from_direction"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_pressure"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="usf.EGK.NGWLMS">
+                <gml:description>Mooring usf.EGK.NGWLMS data from the usf (usf) located Egmont Key</gml:description>
+                <gml:name>usf.EGK.NGWLMS</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>27.6 -82.76</gml:lowerCorner>
+                        <gml:upperCorner>27.6 -82.76</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="usf.EGK.NGWLMS_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#usf.EGK.NGWLMS"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_speed"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_gust"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_from_direction"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_level"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/salinity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_pressure"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="usf.FHP.NGWLMS">
+                <gml:description>Mooring usf.FHP.NGWLMS data from the usf (usf) located Fred Howard Park</gml:description>
+                <gml:name>usf.FHP.NGWLMS</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>28.15 -82.8</gml:lowerCorner>
+                        <gml:upperCorner>28.15 -82.8</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="usf.FHP.NGWLMS_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#usf.FHP.NGWLMS"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_speed"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_gust"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_from_direction"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_level"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/salinity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_pressure"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="usf.HOM.NGWLMS">
+                <gml:description>Mooring usf.HOM.NGWLMS data from the usf (usf) located </gml:description>
+                <gml:name>usf.HOM.NGWLMS</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>28.77 -82.71</gml:lowerCorner>
+                        <gml:upperCorner>28.77 -82.71</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="usf.HOM.NGWLMS_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#usf.HOM.NGWLMS"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_speed"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_gust"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_from_direction"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_level"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/salinity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_pressure"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="usf.NFB.NGWLMS">
+                <gml:description>Mooring usf.NFB.NGWLMS data from the usf (usf) located </gml:description>
+                <gml:name>usf.NFB.NGWLMS</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>25.0839996337891 -81.0960006713867</gml:lowerCorner>
+                        <gml:upperCorner>25.0839996337891 -81.0960006713867</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="usf.NFB.NGWLMS_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#usf.NFB.NGWLMS"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_speed"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_gust"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_from_direction"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_level"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/salinity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_pressure"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="usf.PAS.NGWLMS">
+                <gml:description>Mooring usf.PAS.NGWLMS data from the usf (usf) located Port Richey</gml:description>
+                <gml:name>usf.PAS.NGWLMS</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>28.285 -82.732002</gml:lowerCorner>
+                        <gml:upperCorner>28.285 -82.732002</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="usf.PAS.NGWLMS_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#usf.PAS.NGWLMS"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_speed"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_gust"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_from_direction"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_level"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/salinity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_pressure"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="usf.SHP.NGWLMS">
+                <gml:description>Mooring usf.SHP.NGWLMS data from the usf (usf) located Shell Point</gml:description>
+                <gml:name>usf.SHP.NGWLMS</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>30.058001 -84.290001</gml:lowerCorner>
+                        <gml:upperCorner>30.058001 -84.290001</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="usf.SHP.NGWLMS_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#usf.SHP.NGWLMS"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_speed"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_gust"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_from_direction"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_level"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/salinity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_pressure"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering><sos:ObservationOffering xmlns:xlink="http://www.w3.org/1999/xlink" gml:id="usf.TAS.NGWLMS">
+                <gml:description>Mooring usf.TAS.NGWLMS data from the usf (usf) located </gml:description>
+                <gml:name>usf.TAS.NGWLMS</gml:name>
+                <gml:boundedBy>
+                    <gml:Envelope srsName="urn:ogc:def:crs:EPSG:6.5:4326">
+                        <gml:lowerCorner>28.1560001373291 -82.7580032348633</gml:lowerCorner>
+                        <gml:upperCorner>28.1560001373291 -82.7580032348633</gml:upperCorner>
+                    </gml:Envelope>
+                </gml:boundedBy>
+                <sos:time>
+                    <gml:TimePeriod gml:id="usf.TAS.NGWLMS_valid_times">
+                        <gml:beginPosition indeterminatePosition="unknown">2008-10-01T00:00:00Z</gml:beginPosition>
+                        <gml:endPosition indeterminatePosition="now"/>
+                        <gml:timeInterval unit="hour">.5</gml:timeInterval>
+                    </gml:TimePeriod>
+                </sos:time>
+                <sos:procedure xlink:href="urn:secoora.org:source.mooring#usf.TAS.NGWLMS"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_speed"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_gust"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/wind_from_direction"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/water_level"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/salinity"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_temperature"/><sos:observedProperty xlink:href="http://mmisw.org/ont/cf/parameter/air_pressure"/>
+                
+                
+                <sos:featureOfInterest xlink:href="urn:something:bodyOfWater"/>
+                <sos:responseFormat>text/xml; subtype="om/1.0"</sos:responseFormat>
+                <sos:responseMode>inline</sos:responseMode>
+            </sos:ObservationOffering></sos:ObservationOfferingList>
+    </sos:Contents>
+</sos:Capabilities>
