@@ -12,7 +12,7 @@ import java.util.Map;
 
 import org.apache.log4j.Logger;
 
-import com.iai.proteus.common.sos.model.SosCapabilities;
+import com.iai.proteus.common.model.sos_v1.SosCapabilities;
 import com.iai.proteus.common.sos.util.SosUtil;
 
 

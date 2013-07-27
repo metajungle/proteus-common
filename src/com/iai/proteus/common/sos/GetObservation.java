@@ -9,7 +9,7 @@ import java.net.MalformedURLException;
 import java.net.SocketTimeoutException;
 
 import com.iai.proteus.common.Util;
-import com.iai.proteus.common.sos.model.GetObservationRequest;
+import com.iai.proteus.common.model.sos_v1.GetObservationRequest;
 
 public class GetObservation {
 

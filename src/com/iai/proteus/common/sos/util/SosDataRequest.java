@@ -5,7 +5,7 @@
  */
 package com.iai.proteus.common.sos.util;
 
-import com.iai.proteus.common.sos.model.GetObservationRequest;
+import com.iai.proteus.common.model.sos_v1.GetObservationRequest;
 
 /**
  * An object holding information required to issue a data request to an 

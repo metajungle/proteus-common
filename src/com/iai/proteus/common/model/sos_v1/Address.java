@@ -3,7 +3,7 @@
  * 
  * All Rights Reserved.
  */
-package com.iai.proteus.common.sos.model;
+package com.iai.proteus.common.model.sos_v1;
 
 /**
  * Represents the <ows:Address /> part of a Capabilities document 

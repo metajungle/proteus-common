@@ -16,6 +16,16 @@ import org.xml.sax.SAXException;
 
 import com.iai.proteus.common.LatLon;
 import com.iai.proteus.common.Util;
+import com.iai.proteus.common.model.sos_v1.Address;
+import com.iai.proteus.common.model.sos_v1.ContactInfo;
+import com.iai.proteus.common.model.sos_v1.GetObservationRequest;
+import com.iai.proteus.common.model.sos_v1.Operation;
+import com.iai.proteus.common.model.sos_v1.OperationsMetadata;
+import com.iai.proteus.common.model.sos_v1.SensorOffering;
+import com.iai.proteus.common.model.sos_v1.ServiceContact;
+import com.iai.proteus.common.model.sos_v1.ServiceIdentification;
+import com.iai.proteus.common.model.sos_v1.ServiceProvider;
+import com.iai.proteus.common.model.sos_v1.SosCapabilities;
 import com.iai.proteus.common.sos.GetCapabilities;
 import com.iai.proteus.common.sos.GetObservation;
 import com.iai.proteus.common.sos.SosCapabilitiesCache;
@@ -24,16 +34,6 @@ import com.iai.proteus.common.sos.SupportedResponseFormats;
 import com.iai.proteus.common.sos.data.CSVData;
 import com.iai.proteus.common.sos.data.SensorData;
 import com.iai.proteus.common.sos.exception.ExceptionReportException;
-import com.iai.proteus.common.sos.model.Address;
-import com.iai.proteus.common.sos.model.ContactInfo;
-import com.iai.proteus.common.sos.model.GetObservationRequest;
-import com.iai.proteus.common.sos.model.Operation;
-import com.iai.proteus.common.sos.model.OperationsMetadata;
-import com.iai.proteus.common.sos.model.SensorOffering;
-import com.iai.proteus.common.sos.model.ServiceContact;
-import com.iai.proteus.common.sos.model.ServiceIdentification;
-import com.iai.proteus.common.sos.model.ServiceProvider;
-import com.iai.proteus.common.sos.model.SosCapabilities;
 
 public class SosUtil {
 

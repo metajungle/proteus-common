@@ -3,7 +3,7 @@
  * 
  * All Rights Reserved.
  */
-package com.iai.proteus.common.sos.parser;
+package com.iai.proteus.common.parser.sos_v1;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -21,16 +21,16 @@ import org.xml.sax.helpers.DefaultHandler;
 
 import com.iai.proteus.common.TimeUtils;
 import com.iai.proteus.common.Util;
-import com.iai.proteus.common.sos.model.Address;
-import com.iai.proteus.common.sos.model.ContactInfo;
-import com.iai.proteus.common.sos.model.Operation;
-import com.iai.proteus.common.sos.model.OperationsMetadata;
-import com.iai.proteus.common.sos.model.Parameter;
-import com.iai.proteus.common.sos.model.SensorOffering;
-import com.iai.proteus.common.sos.model.ServiceContact;
-import com.iai.proteus.common.sos.model.ServiceIdentification;
-import com.iai.proteus.common.sos.model.ServiceProvider;
-import com.iai.proteus.common.sos.model.SosCapabilities;
+import com.iai.proteus.common.model.sos_v1.Address;
+import com.iai.proteus.common.model.sos_v1.ContactInfo;
+import com.iai.proteus.common.model.sos_v1.Operation;
+import com.iai.proteus.common.model.sos_v1.OperationsMetadata;
+import com.iai.proteus.common.model.sos_v1.Parameter;
+import com.iai.proteus.common.model.sos_v1.SensorOffering;
+import com.iai.proteus.common.model.sos_v1.ServiceContact;
+import com.iai.proteus.common.model.sos_v1.ServiceIdentification;
+import com.iai.proteus.common.model.sos_v1.ServiceProvider;
+import com.iai.proteus.common.model.sos_v1.SosCapabilities;
 
 public class SosCapabilitiesParser extends DefaultHandler {
 	

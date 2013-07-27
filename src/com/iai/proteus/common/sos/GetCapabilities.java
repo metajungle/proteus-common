@@ -15,8 +15,8 @@ import org.apache.log4j.Logger;
 import org.xml.sax.SAXException;
 
 import com.iai.proteus.common.Util;
-import com.iai.proteus.common.sos.model.SosCapabilities;
-import com.iai.proteus.common.sos.parser.SosCapabilitiesParser;
+import com.iai.proteus.common.model.sos_v1.SosCapabilities;
+import com.iai.proteus.common.parser.sos_v1.SosCapabilitiesParser;
 
 public class GetCapabilities {
 
