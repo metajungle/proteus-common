@@ -1,19 +1,37 @@
-<project name="proteus-common" default="dist" basedir=".">
+<project name="proteus-common" default="all" basedir=".">
     
     <description>Builds the Proteus Common library</description>
 
-    <!-- set global properties for this build -->
-    <property name="src" location="src" />
-    <property name="build" location="build" />
-    <property name="dist" location="dist" />
-	
-	<!-- class path --> 
-    <path id="compile.classpath">
-        <fileset dir="lib" includes="**/*.jar"/>
-    </path>	
+	<!-- determines whether or not to be verbose -->
+	<property name="TALK" value="false" />
 
-    <!-- current version --> 
-    <property name="version" value="1.0" />
+	<!-- set global properties for this build -->
+	<property name="src" location="src" />
+	<property name="tsrc" location="test" />
+	<property name="lib" location="lib" />
+	<property name="build" location="build" />
+	<property name="dist" location="dist" />
+	<property name="bin" location="bin" />
+	<property name="resources" location="resources" />
+	
+	<!-- current version -->
+	<property name="version" value="1.0.0" />
+	
+	<!-- CLASSPATH -->
+
+	<path id="classpath.base">
+		<fileset dir="${lib}">
+			<include name="**/*.jar" />
+		</fileset>
+	</path>
+
+	<path id="classpath.test">
+		<pathelement location="${build}" />
+		<pathelement location="${tsrc}" />
+		<path refid="classpath.base" />
+	</path>
+
+	<!-- MAIN TARGETS -->
 	
     <target name="init">
         <!-- Create the time stamp -->
@@ -26,7 +44,7 @@
         <!-- Compile the java code from ${src} into ${build} -->
         <javac destdir="${build}">
             <src path="${src}" />
-        	<classpath refid="compile.classpath" />
+        	<classpath refid="classpath.base" />
         	<!--
             <classpath>
                 <pathelement path="${classpath}" />
@@ -72,10 +90,81 @@
     	    </manifest>
     	</jar>
     </target>
+	
+	<!-- JENKINS -->
+
+	<target name="jenkins" depends="dist, dist-dependencies" description="build for jenkins">
+
+	</target>
+	
+	<target name="check-dependencies">
+		<available file="${lib}" type="dir" property="libs-present" />
+	</target>
+
+	<target name="dist-dependencies" depends="check-dependencies" if="libs-present">
+		<zip destfile="${dist}/dependencies.zip" basedir="${lib}" />
+		<echo message="Archived dependencies" />
+	</target>
+
+	<target name="check-dir">
+		<condition property="dir-checked">
+			<available file="${dir}" type="dir" />
+		</condition>
+	</target>
+
+	<target name="create-dir" depends="check-dir" if="dir-checked">
+		<mkdir dir="${dir}" />
+	</target>
+
+	<!-- TESTING -->
+
+	<target name="test" depends="compile,run-tests">
+	</target>
+
+	<target name="compile-test">
+		<property name="mycls" refid="classpath.test" />
+		<echo message="CLASSPATH: ${mycls}" />
+
+		<javac srcdir="${tsrc}" destdir="${build}" verbose="${TALK}">
+			<classpath refid="classpath.test" />
+		</javac>
+	</target>
+
+	<target name="clean-compile-test">
+		<delete verbose="${TALK}">
+			<fileset dir="${tsrc}" includes="**/*.class" />
+		</delete>
+	</target>
+
+	<target name="run-tests" depends="check-tests" if="tests.exist">
+		<!-- compile tests -->
+		<antcall target="compile-test" />
+		<!-- run tests -->
+		<junit fork="yes">
+			<classpath refid="classpath.test" />
+			<formatter type="brief" usefile="false" />
+			<batchtest todir="${dist}">
+				<fileset dir="${tsrc}">
+					<include name="**/*Test.java"/>
+				</fileset>
+			</batchtest>
+		</junit>
+	</target>
+
+	<target name="check-tests">
+		<available file="${tsrc}" type="dir" property="tests.exist" />
+	</target>	
+	
+	<!-- CLEAN -->
 
     <target name="clean" description="clean up">
         <!-- Delete the ${build} and ${dist} directory trees -->
         <delete dir="${build}" />
         <delete dir="${dist}" />
+    	<delete dir="${bin}" />
     </target>
+	
+	<target name="all" depends="dist">
+	</target>
+	
 </project>
