@@ -15,7 +15,7 @@
 	<property name="resources" location="resources" />
 	
 	<!-- current version -->
-	<property name="version" value="1.0.0" />
+	<property name="version" value="1.1.0" />
 	
 	<!-- CLASSPATH -->
 
