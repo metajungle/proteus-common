@@ -67,6 +67,9 @@ public class ObservationOffering {
 	 */
 	public ObservationOffering() {
 		procedures = new ArrayList<>();
+		observedProperties = new ArrayList<>();
+		featuresOfInterest = new ArrayList<>();
+		responseFormats = new ArrayList<>();
 	}
 	
 	public String getId() {
@@ -110,9 +113,8 @@ public class ObservationOffering {
 	}
 
 	public String getResultModel() {
-		String m = resultModel;
-		if (m != null) {
-			return m;
+		if (resultModel != null) {
+			return resultModel;
 		}
 		// fall back 
 		return getResponseModel();

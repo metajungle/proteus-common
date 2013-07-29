@@ -15,7 +15,6 @@ public class ServiceIdentification {
 	
 	private final String ows = "http://www.opengis.net/ows/1.1";
 	
-	
 	@XmlElement(name="Title", namespace=ows, required=true)
 	protected String title;
 	

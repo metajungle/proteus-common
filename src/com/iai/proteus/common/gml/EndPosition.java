@@ -39,7 +39,6 @@ public class EndPosition {
 			return null;
 		}
 		// return value if there is one
-		String value = getValue();
 		if (value != null && !value.trim().equals("")) {
 			return value;
 		}

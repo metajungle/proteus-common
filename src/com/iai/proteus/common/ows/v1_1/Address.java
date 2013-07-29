@@ -58,14 +58,11 @@ public class Address {
 	}
 	
 	/**
-	 * Convenience method for retrieving the 'electronic' mail address
+	 * Utility method for retrieving the 'electronic' mail address
 	 * 
 	 * @return
 	 */
 	public String getEmail() {
 		return getElectronicMailAddress();
 	}
-	
-	
-
 }

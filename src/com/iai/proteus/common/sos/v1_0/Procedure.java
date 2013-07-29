@@ -36,10 +36,9 @@ public class Procedure {
 	 * @return
 	 */
 	public String getProcedure() {
-		String href = getAttrHref();
-		if (href != null)
-			return getAttrHref();
-		return getValue();		
+		if (attrHref != null)
+			return attrHref;
+		return value;
 	}
 }
 

@@ -6,19 +6,19 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlValue;
 
 /**
- * OWS Provider Site
+ * OWS Get 
  * 
  * @author Jakob Henriksson
  *
  */
 @XmlAccessorType(XmlAccessType.NONE)
-public class ProviderSite {
-
+public class Get {
+	
 	private final String xlink = "http://www.w3.org/1999/xlink";
 	
 	@XmlAttribute(name="href", namespace=xlink, required=false)
 	protected String attrHref;
-	
+
 	@XmlValue
 	protected String value;
 
@@ -35,9 +35,9 @@ public class ProviderSite {
 	 * 
 	 * @return
 	 */
-	public String getProviderSite() {
+	public String getGet() {
 		if (attrHref != null)
 			return attrHref;
-		return value;		
+		return value;
 	}	
 }

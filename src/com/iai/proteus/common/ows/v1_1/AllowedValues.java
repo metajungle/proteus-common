@@ -8,28 +8,28 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 
 /**
- * OWS Keywords 
+ * OWS Allowed Values 
  * 
  * @author Jakob Henriksson
  *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-public class Keywords {
+public class AllowedValues {
 	
 	private final String ows = "http://www.opengis.net/ows/1.1";
-
-	@XmlElement(name="Keyword", namespace=ows)
-	private List<String> keywords;
+	
+	@XmlElement(name="Value", namespace=ows, required=true)
+	protected List<String> values;
 	
 	/**
 	 * Constructor 
-	 * 
 	 */
-	public Keywords() {
-		keywords = new ArrayList<>();
+	public AllowedValues() {
+		values = new ArrayList<>();
+	}
+	
+	public List<String> getValues() {
+		return values;
 	}
 
-	public List<String> getKeywords() {
-		return keywords;
-	}
 }

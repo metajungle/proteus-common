@@ -23,6 +23,9 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.iai.proteus.common.ows.v1_1.Address;
+import com.iai.proteus.common.ows.v1_1.Operation;
+import com.iai.proteus.common.ows.v1_1.OperationsMetadata;
+import com.iai.proteus.common.ows.v1_1.Parameter;
 import com.iai.proteus.common.ows.v1_1.ServiceContact;
 import com.iai.proteus.common.ows.v1_1.ServiceIdentification;
 import com.iai.proteus.common.ows.v1_1.ServiceProvider;
@@ -132,6 +135,24 @@ public class SosParsingCapabilitiesTest {
 		 * Operations Metadata
 		 */
         
+        OperationsMetadata om = capabilities.getOperationsMetadata();
+        assertThat(om, is(not(nullValue())));
+        
+        assertThat(om.getOperations(), hasSize(3));
+        Operation op = om.getOperations().get(0);
+        assertThat(op.getName(), is("GetCapabilities"));
+        assertThat(op.getDcp().getHttp().getGetValue(), 
+        		is("http://sdf.ndbc.noaa.gov/sos/server.php"));
+        assertThat(op.getDcp().getHttp().getPostValue(), 
+        		is("http://sdf.ndbc.noaa.gov/sos/server.php"));
+        
+        assertThat(op.getParameters(), hasSize(1));
+        Parameter parameter = op.getParameters().get(0);
+        assertThat(parameter.getName(), is("Sections"));
+        assertThat(parameter.getAllowedValuesList(), hasSize(5));
+        assertThat(parameter.getAllowedValuesList().get(0), 
+        		is("ServiceIdentification"));
+        
 		/*
 		 * Contents
 		 */
@@ -230,6 +251,24 @@ public class SosParsingCapabilitiesTest {
 		/*
 		 * Operations Metadata
 		 */
+        
+        OperationsMetadata om = capabilities.getOperationsMetadata();
+        assertThat(om, is(not(nullValue())));
+        
+        assertThat(om.getOperations(), hasSize(3));
+        Operation op = om.getOperations().get(0);
+        assertThat(op.getName(), is("GetCapabilities"));
+        assertThat(op.getDcp().getHttp().getGetValue(), 
+        		is("http://oos.soest.hawaii.edu/thredds/sos/hioos/wqb/wqbawagg.ncml"));
+        assertThat(op.getDcp().getHttp().getPostValue(), 
+        		is(nullValue()));
+        
+        assertThat(op.getParameters(), hasSize(1));
+        Parameter parameter = op.getParameters().get(0);
+        assertThat(parameter.getName(), is("Sections"));
+        assertThat(parameter.getAllowedValuesList(), hasSize(5));
+        assertThat(parameter.getAllowedValuesList().get(4), 
+        		is("All"));
         
 		/*
 		 * Contents

@@ -6,9 +6,16 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import com.iai.proteus.common.ows.v1_1.OperationsMetadata;
 import com.iai.proteus.common.ows.v1_1.ServiceIdentification;
 import com.iai.proteus.common.ows.v1_1.ServiceProvider;
 
+/**
+ * SOS Capabilities  
+ * 
+ * @author Jakob Henriksson
+ *
+ */
 @XmlRootElement(name="Capabilities", namespace="http://www.opengis.net/sos/1.0")
 public class Capabilities {
 	
@@ -21,8 +28,8 @@ public class Capabilities {
 	@XmlElement(name="ServiceProvider", namespace=ows, required=true)
 	private ServiceProvider serviceProvider;
 
-//	@XmlElement(name="OperationsMetadata", namespace=ows, required=true)
-//	private OperationsMetadata operationsMetadata;
+	@XmlElement(name="OperationsMetadata", namespace=ows, required=true)
+	private OperationsMetadata operationsMetadata;
 	
 	@XmlElement(name="Contents", namespace=sos, required=true)
 	private Contents contents;
@@ -36,9 +43,9 @@ public class Capabilities {
 		return serviceProvider;
 	}
 	
-//	public OperationsMetadata getOperationsMetadata() {
-//		return operationsMetadata;
-//	}
+	public OperationsMetadata getOperationsMetadata() {
+		return operationsMetadata;
+	}
 	
 	public Contents getContents() {
 		return contents; 

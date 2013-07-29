@@ -36,9 +36,8 @@ public class ObservedProperty {
 	 * @return
 	 */
 	public String getObservedProperty() {
-		String href = getAttrHref();
-		if (href != null)
-			return getAttrHref();
-		return getValue();		
+		if (attrHref != null)
+			return attrHref;
+		return value;
 	}
 }

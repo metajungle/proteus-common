@@ -35,9 +35,8 @@ public class TimePeriod {
 	 * @return
 	 */
 	public boolean isNoEndPosition() {
-		EndPosition end = getEndPosition();
-		if (end != null) {
-			return (end.getAttrIndeterminatePosition() == null);
+		if (endPosition != null) {
+			return (endPosition.getAttrIndeterminatePosition() == null);
 		}
 		// default 
 		return false;
