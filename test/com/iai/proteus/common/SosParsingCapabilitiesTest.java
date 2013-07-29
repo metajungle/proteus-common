@@ -166,10 +166,9 @@ public class SosParsingCapabilitiesTest {
         		is("80.81 180"));
         
         // time 
-        assertThat(offering.getTime().getTimePeriod().getBeginPosition(), 
+        assertThat(offering.getTime().getBeginPosition(), 
         		is("2006-07-27T21:10:00Z"));
-        assertThat(offering.getTime().getTimePeriod().getEndPosition(),
-        		is(""));
+        assertThat(offering.getTime().getEndPosition(), is(nullValue()));
         
 	}
 
@@ -266,9 +265,9 @@ public class SosParsingCapabilitiesTest {
         		is("21.27999959716797 -157.84790720214843"));
         
         // time 
-        assertThat(offering.getTime().getTimePeriod().getBeginPosition(), 
+        assertThat(offering.getTime().getBeginPosition(), 
         		is("2008-06-06T10:00:00Z"));
-        assertThat(offering.getTime().getTimePeriod().getEndPosition(),
+        assertThat(offering.getTime().getEndPosition(),
         		is("2013-06-19T09:40:00Z"));        
         
 	}	

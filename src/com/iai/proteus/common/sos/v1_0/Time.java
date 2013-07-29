@@ -4,6 +4,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 
+import com.iai.proteus.common.gml.EndPosition;
 import com.iai.proteus.common.gml.TimePeriod;
 
 /**
@@ -23,4 +24,31 @@ public class Time {
 	public TimePeriod getTimePeriod() {
 		return timePeriod;
 	}
+	
+	/**
+	 * Utility method 
+	 * 
+	 * @return
+	 */
+	public String getBeginPosition() {
+		if (timePeriod != null) {
+			return timePeriod.getBeginPosition();
+		}
+		return null;
+	}
+	
+	/**
+	 * Utility method 
+	 * 
+	 * @return
+	 */
+	public String getEndPosition() {
+		if (timePeriod != null) {
+			EndPosition end = timePeriod.getEndPosition();
+			if (end != null) {
+				return end.getEndPosition();
+			}
+		}
+		return null;
+	}	
 }
