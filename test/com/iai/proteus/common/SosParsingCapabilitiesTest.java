@@ -5,18 +5,8 @@ import static org.hamcrest.core.Is.is;
 import static org.hamcrest.core.IsNot.not;
 import static org.hamcrest.core.IsNull.nullValue;
 import static org.junit.Assert.assertThat;
-import static org.junit.Assert.fail;
 
 import java.util.List;
-
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBElement;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Unmarshaller;
-import javax.xml.stream.XMLInputFactory;
-import javax.xml.stream.XMLStreamException;
-import javax.xml.stream.XMLStreamReader;
-import javax.xml.transform.stream.StreamSource;
 
 import org.junit.After;
 import org.junit.Before;
@@ -29,11 +19,14 @@ import com.iai.proteus.common.ows.v1_1.Parameter;
 import com.iai.proteus.common.ows.v1_1.ServiceContact;
 import com.iai.proteus.common.ows.v1_1.ServiceIdentification;
 import com.iai.proteus.common.ows.v1_1.ServiceProvider;
+import com.iai.proteus.common.sos.parser.SosCapabilitiesParser;
 import com.iai.proteus.common.sos.v1_0.Capabilities;
 import com.iai.proteus.common.sos.v1_0.ObservationOffering;
 
 
 public class SosParsingCapabilitiesTest {
+	
+	private SosCapabilitiesParser parser = new SosCapabilitiesParser();
 	
 	@Before
 	public void setUp() throws Exception {
@@ -44,37 +37,6 @@ public class SosParsingCapabilitiesTest {
 	public void tearDown() throws Exception {
 	}
 	
-	/**
-	 * Parses SOS Capabilities document from the given location  
-	 * 
-	 * @param location
-	 * @return
-	 */
-	private Capabilities parseCapabilities(String location) {
-		
-		try {
-			
-			XMLInputFactory xif = XMLInputFactory.newFactory();
-	        StreamSource xml = new StreamSource(location);
-	        XMLStreamReader xsr = xif.createXMLStreamReader(xml);
-	        xsr.nextTag();
-			
-	        JAXBContext jc = JAXBContext.newInstance(Capabilities.class);
-	        Unmarshaller unmarshaller = jc.createUnmarshaller();
-	        JAXBElement<Capabilities> jb = unmarshaller.unmarshal(xsr, Capabilities.class);
-	        
-	        return jb.getValue();
-	        
-		} catch (JAXBException e) {
-			System.err.println("E: " + e.getMessage());
-			fail("JAXBException thrown");
-		} catch (XMLStreamException e) {
-			System.err.println("E: " + e.getMessage());
-			fail("XMLStreamException thrown");
-		}
-		
-		return null;
-	}
 
 	/**
 	 * Parsing the NDBC SOS capabilities document 
@@ -84,7 +46,7 @@ public class SosParsingCapabilitiesTest {
 	public void testNdbcSosCapabilities() {
 		
 		Capabilities capabilities = 
-				parseCapabilities("resources/sos-capabilities/sos-ndbc-capabilities.xml");
+				parser.parseCapabilities("resources/sos-capabilities/sos-ndbc-capabilities.xml");
 		
 		assertThat(capabilities, is(not(nullValue())));
 
@@ -201,7 +163,7 @@ public class SosParsingCapabilitiesTest {
 	public void testPacIoosSosCapabilities() {
 		
 		Capabilities capabilities = 
-				parseCapabilities("resources/sos-capabilities/sos-pacioos-capabilities.xml");
+				parser.parseCapabilities("resources/sos-capabilities/sos-pacioos-capabilities.xml");
 		
 		assertThat(capabilities, is(not(nullValue())));
 		
