@@ -76,7 +76,7 @@ public class SosUtil {
 	 *
 	 * @return
 	 */
-	public static List<String> commonResponseFormats(SensorOffering offering) {
+	public static List<String> supportedResponseFormats(SensorOffering offering) {
 		List<String> formats = new ArrayList<String>();
 		List<String> availableFormats = offering.getResponseFormats();
 		for (SupportedResponseFormats f : SupportedResponseFormats.values()) {

@@ -15,7 +15,7 @@
 	<property name="resources" location="resources" />
 	
 	<!-- current version -->
-	<property name="version" value="1.1.0" />
+	<property name="version" value="1.2.1" />
 	
 	<!-- CLASSPATH -->
 
@@ -75,7 +75,7 @@
 
         <manifestclasspath property="jar.classpath" 
         	               jarfile="${dist}/lib/${ant.project.name}-${version}.jar">
-            <classpath refid="compile.classpath" />
+            <classpath refid="classpath.base" />
         </manifestclasspath>	
     	
         <!-- Put everything in ${build} into a JAR -->

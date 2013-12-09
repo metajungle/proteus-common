@@ -53,7 +53,7 @@ public class Util {
 	public static String get(String serviceAddress)
 			throws MalformedURLException, IOException, SocketTimeoutException {
 		// defaults
-		return get(serviceAddress, 10, 60);
+		return get(serviceAddress, 10000, 60000);
 	}
 
 	/**
@@ -75,8 +75,8 @@ public class Util {
 		/* open a URL connection */
 		URL url = new URL(serviceAddress);
 		URLConnection urlConnection = url.openConnection();
-		urlConnection.setConnectTimeout(timeoutConnection * 1000);
-		urlConnection.setReadTimeout(timeoutRead * 1000);
+		urlConnection.setConnectTimeout(timeoutConnection);
+		urlConnection.setReadTimeout(timeoutRead);
 
 		BufferedReader br =
 			new BufferedReader(new InputStreamReader(
@@ -108,7 +108,7 @@ public class Util {
 	public static String post(String service, String request) 
 			throws SocketTimeoutException, MalformedURLException 
 	{
-		return post(service, request, 10, 60);
+		return post(service, request, 10000, 60000);
 	}
 	
 	/**
@@ -153,8 +153,8 @@ public class Util {
 			urlConnection.setDoOutput(true); // triggers POST
 			urlConnection.setUseCaches(false);
 			urlConnection.setDefaultUseCaches(false);
-			urlConnection.setConnectTimeout(timeoutConnection * 1000);
-			urlConnection.setReadTimeout(timeoutRead * 1000);
+			urlConnection.setConnectTimeout(timeoutConnection);
+			urlConnection.setReadTimeout(timeoutRead);
 
 			urlConnection.setRequestMethod("POST");
 			urlConnection.setRequestProperty("Content-Type", contentType);

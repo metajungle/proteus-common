@@ -22,13 +22,20 @@ public class Field implements Serializable {
 	private String uom; 
 	
 	private boolean isTimeField; 
+  
+  private boolean selected;
 	
 	/**
 	 * Default constructor  
 	 * 
 	 */
 	public Field() {
-		
+		// defaults
+    name = null;
+		definition = null;
+		uom = null;
+		isTimeField = false;
+		selected = false;
 	}
 	
 	/**
@@ -37,11 +44,8 @@ public class Field implements Serializable {
 	 * @param name
 	 */
 	public Field(String name) {
+    this();
 		this.name = name;
-		// defaults
-		definition = null;
-		uom = null;
-		isTimeField = false;
 	}
 	
 	/**
@@ -121,12 +125,29 @@ public class Field implements Serializable {
 	public boolean isTimeField() {
 		return isTimeField;
 	}
+  
+  /**
+   * Sets the selection status of the field 
+   * 
+   * @param selected 
+   */
+  public void setSelected(boolean selected) {
+    this.selected = selected;
+  }
+  
+  /**
+   * Returns the selection status of the field 
+   * 
+   */
+  public boolean isSelected() {
+    return selected;
+  }
 	
 	@Override 
 	public String toString() {
 		return name;
 	}
-	
+  
 	/* (non-Javadoc)
 	 * @see java.lang.Object#hashCode()
 	 */
